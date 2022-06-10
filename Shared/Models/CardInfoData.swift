@@ -28,7 +28,7 @@ struct CardInfoData: Identifiable {
 extension CardInfoData {
     static var sampleData: [CardInfoData] {
         [
-            CardInfoData(title: "HANZAN", attendees: ["sunbae","hosub"], lengthInMinutes: 60000, theme:.yellow),
+            CardInfoData(title: "HANZAN", attendees: ["sunbae","hosub","jeehoon"], lengthInMinutes: 60000, theme:.yellow),
             CardInfoData(title: "sogongdong", attendees: ["sunbae","joohyun"], lengthInMinutes: 132000, theme: .orange)
         ]
     }

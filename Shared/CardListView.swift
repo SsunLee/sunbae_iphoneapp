@@ -13,15 +13,27 @@ struct CardListView: View {
     var body: some View {
         List {
             ForEach(cardinfos, id: \.title) { cardinfo in
-                CardView(cardinfo: cardinfo)
-                    .listRowBackground(cardinfo.theme.mainColor)
+                NavigationLink(destination: Text(cardinfo.title)) {
+                    CardView(cardinfo: cardinfo)
+                }
+                .listRowBackground(cardinfo.theme.mainColor)
             }
+        }
+        .navigationTitle("Sunbae 의 지출 내역")
+        .toolbar {
+            Button(action: {}) {
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("New")
         }
     }
 }
 
 struct CardListView_Previews: PreviewProvider {
     static var previews: some View {
-        CardListView(cardinfos: CardInfoData.sampleData)
+        NavigationView {
+            CardListView(cardinfos: CardInfoData.sampleData)
+        }
+        
     }
 }
