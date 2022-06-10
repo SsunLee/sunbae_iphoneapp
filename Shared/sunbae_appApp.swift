@@ -11,7 +11,7 @@ import SwiftUI
 struct sunbae_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CardListView(cardinfos: CardInfoData.sampleData)
         }
     }
 }
