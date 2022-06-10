@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04813EBD2851EE650083DDF1 /* CirclsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EBC2851EE650083DDF1 /* CirclsImage.swift */; };
+		04813EC12852F6F40083DDF1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EC02852F6F40083DDF1 /* MapView.swift */; };
 		04C361A12851C55100D65F4B /* sunbaeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C361A02851C55100D65F4B /* sunbaeApp.swift */; };
 		04C361A32851C55100D65F4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C361A22851C55100D65F4B /* ContentView.swift */; };
 		04C361A52851C55500D65F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C361A42851C55500D65F4B /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04813EBC2851EE650083DDF1 /* CirclsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclsImage.swift; sourceTree = "<group>"; };
+		04813EC02852F6F40083DDF1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		04C3619D2851C55100D65F4B /* sunbae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunbae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C361A02851C55100D65F4B /* sunbaeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunbaeApp.swift; sourceTree = "<group>"; };
 		04C361A22851C55100D65F4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				04C361A42851C55500D65F4B /* Assets.xcassets */,
 				04C361A92851C55500D65F4B /* sunbae.entitlements */,
 				04C361A62851C55500D65F4B /* Preview Content */,
+				04813EBC2851EE650083DDF1 /* CirclsImage.swift */,
+				04813EC02852F6F40083DDF1 /* MapView.swift */,
 			);
 			path = sunbae;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04813EBD2851EE650083DDF1 /* CirclsImage.swift in Sources */,
+				04813EC12852F6F40083DDF1 /* MapView.swift in Sources */,
 				04C361A32851C55100D65F4B /* ContentView.swift in Sources */,
 				04C361A12851C55100D65F4B /* sunbaeApp.swift in Sources */,
 			);
