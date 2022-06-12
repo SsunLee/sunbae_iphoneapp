@@ -27,6 +27,8 @@
 		04813F1028533CE00083DDF1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F0E28533CE00083DDF1 /* CardView.swift */; };
 		04813F1228533F150083DDF1 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F1128533F150083DDF1 /* TrailingIconLabelStyle.swift */; };
 		04813F1328533F150083DDF1 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F1128533F150083DDF1 /* TrailingIconLabelStyle.swift */; };
+		CAEC96C62855A34D002CBDF5 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96C52855A34D002CBDF5 /* EmptyView.swift */; };
+		CAEC96C72855A34D002CBDF5 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96C52855A34D002CBDF5 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		04813F0B28533B290083DDF1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		04813F0E28533CE00083DDF1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		04813F1128533F150083DDF1 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
+		CAEC96C52855A34D002CBDF5 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 				04813F04285333AF0083DDF1 /* CardListView.swift */,
 				04813F0E28533CE00083DDF1 /* CardView.swift */,
 				04813F1128533F150083DDF1 /* TrailingIconLabelStyle.swift */,
+				CAEC96C52855A34D002CBDF5 /* EmptyView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -331,6 +335,7 @@
 				04813F08285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813F0C28533B290083DDF1 /* Theme.swift in Sources */,
 				04813F05285333AF0083DDF1 /* CardListView.swift in Sources */,
+				CAEC96C62855A34D002CBDF5 /* EmptyView.swift in Sources */,
 				04813F0F28533CE00083DDF1 /* CardView.swift in Sources */,
 				04813EF0285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				04813F1228533F150083DDF1 /* TrailingIconLabelStyle.swift in Sources */,
@@ -345,6 +350,7 @@
 				04813F09285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813F0D28533B290083DDF1 /* Theme.swift in Sources */,
 				04813F06285333AF0083DDF1 /* CardListView.swift in Sources */,
+				CAEC96C72855A34D002CBDF5 /* EmptyView.swift in Sources */,
 				04813F1028533CE00083DDF1 /* CardView.swift in Sources */,
 				04813EF1285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				04813F1328533F150083DDF1 /* TrailingIconLabelStyle.swift in Sources */,
