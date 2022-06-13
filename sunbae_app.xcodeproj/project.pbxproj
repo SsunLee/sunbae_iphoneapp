@@ -21,6 +21,8 @@
 		04813F09285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		CAEC96CF28577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
 		CAEC96D028577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
+		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
+		CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		04813EEE285331090083DDF1 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		04813F07285338880083DDF1 /* CardInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoData.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
+		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 				04813EC9285330FE0083DDF1 /* ContentView.swift */,
 				04813ECA285331090083DDF1 /* Assets.xcassets */,
 				CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */,
+				CAEC96D1285796FB002CBDF5 /* AddItemView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -319,6 +323,7 @@
 				CAEC96CF28577C75002CBDF5 /* HistoryListView.swift in Sources */,
 				04813F08285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813EF0285331090083DDF1 /* sunbae_appApp.swift in Sources */,
+				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +335,7 @@
 				CAEC96D028577C75002CBDF5 /* HistoryListView.swift in Sources */,
 				04813F09285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813EF1285331090083DDF1 /* sunbae_appApp.swift in Sources */,
+				CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

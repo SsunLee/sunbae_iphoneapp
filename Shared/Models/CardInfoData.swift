@@ -19,17 +19,8 @@ struct CardHistory {
         CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000"),
         CardInfo(title:"Gyodae Icheungjip Sicheong",memger: ["Sunbae","Hosub"],price: "210,000"),
         CardInfo(title:"Baekam Sundae Soup",memger: ["Sunbae","Geonsuk","Jeehoon"],price: "65,000"),
-        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
-        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
-        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
-        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
-        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
         
     ]
 }
 
-func addItemRow() {
-    CardHistory.data.append(
-        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
-    )
-}
+

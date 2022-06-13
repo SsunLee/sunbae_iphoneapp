@@ -11,8 +11,9 @@ struct HistoryListView: View {
     @State var historys:[CardInfo] = CardHistory.data
     var body: some View {
         NavigationView {
-            List() {
-                Section(header: Text("Mukbang")) {
+            ZStack {
+            VStack {
+                List() {
                     ForEach(historys, id: \.id) { card in
                         VStack(alignment: .leading, spacing: 10) {
                             Text(card.title)
@@ -34,7 +35,6 @@ struct HistoryListView: View {
                     .onDelete(perform: delete)
                     .onMove(perform: move)
                 }
-                
             }
             .navigationTitle("Sunbae's History")
             .navigationBarItems(leading: EditButton())
@@ -47,13 +47,23 @@ struct HistoryListView: View {
                 }
                 .accessibilityLabel("New")
             }
-
+            VStack {
+                Spacer()
+                HStack{
+                    NavigationLink(destination: AddItemView()) {
+                        Image(systemName: "plus")
+                            .font(.largeTitle)
+                            .frame(width:70, height: 70)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                            .foregroundColor(.white)
+                    }
+                }.padding().shadow(radius: 2)
+            }
         }
-        
-
-
-        
     }
+}
+    
     func addItemRow() {
         historys.append(
             CardInfo(title:"22ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
