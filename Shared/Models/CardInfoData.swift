@@ -7,29 +7,29 @@
 
 import SwiftUI
 
-struct CardInfoData: Identifiable {
-    let id: UUID
-    var title: String
-    var attendees: [String]
-    var lengthInMinutes: Int
-    var theme: Theme
-    
-    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme){
-        self.id = id
-        self.title = title
-        self.attendees = attendees
-        self.lengthInMinutes = lengthInMinutes
-        self.theme = theme
-    }
-    
-    
+struct CardInfo: Identifiable {
+    let id = UUID()
+    let title: String
+    let memger: [String]
+    let price: String
 }
 
-extension CardInfoData {
-    static var sampleData: [CardInfoData] {
-        [
-            CardInfoData(title: "HANZAN", attendees: ["sunbae","hosub","jeehoon"], lengthInMinutes: 60000, theme:.yellow),
-            CardInfoData(title: "sogongdong", attendees: ["sunbae","joohyun"], lengthInMinutes: 132000, theme: .orange)
-        ]
-    }
+struct CardHistory {
+    static var data = [
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000"),
+        CardInfo(title:"Gyodae Icheungjip Sicheong",memger: ["Sunbae","Hosub"],price: "210,000"),
+        CardInfo(title:"Baekam Sundae Soup",memger: ["Sunbae","Geonsuk","Jeehoon"],price: "65,000"),
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132000"),
+        
+    ]
+}
+
+func addItemRow() {
+    CardHistory.data.append(
+        CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
+    )
 }
