@@ -12,6 +12,9 @@ struct AddItemView: View {
     @State var title: String = ""
     @State var member: String = ""
     @State var price: String = ""
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationView {
             ScrollView() {
@@ -44,7 +47,7 @@ struct AddItemView: View {
                     Button(action: {
                         // if you button click
                         AddItemRow()
-                        print("test")
+                        self.presentationMode.wrappedValue.dismiss()
                     }) { // plus button
                         Text("Save")
                     }
@@ -66,9 +69,7 @@ struct AddItemView: View {
                 memger: setMember,
                 price: price)
         )
-        historys.append(
-            CardInfo(title:"22ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
-        )
+        print("title : \(title) memger : \(setMember) price : \(price)")
     }
     
 }
