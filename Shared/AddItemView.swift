@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddItemView: View {
-    @State var historys:[CardInfo] = CardHistory.data
+    @EnvironmentObject var card: CardData
     @State var title: String = ""
     @State var member: String = ""
     @State var price: String = ""
@@ -63,17 +63,13 @@ struct AddItemView: View {
         
         setMember = member.split(separator: ",").map({String($0)})
         
-        historys.append(
+        card.cardinfos.append(
             CardInfo(
                 title:title,
                 memger: setMember,
                 price: price)
         )
-        print("title : \(title) memger : \(setMember) price : \(price)")
-        print("test : \(historys)")
-        //ForEach (historys, id: \.id) { h in
-        //    print(h)
-        //}
+
     }
     
 }

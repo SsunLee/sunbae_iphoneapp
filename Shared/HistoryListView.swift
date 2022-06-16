@@ -13,7 +13,6 @@ struct HistoryListView: View {
     //@ObservedObject var historys = card.cardinfos
     //var historys = card.cardinfos
  
-    
     var body: some View {
         NavigationView {
             ZStack {

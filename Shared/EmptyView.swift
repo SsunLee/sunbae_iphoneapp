@@ -9,20 +9,19 @@ import SwiftUI
 
 struct EmptyView: View {
     var body: some View {
-        ZStack{
+        NavigationLink(destination: AddItemView()){
             VStack(alignment: .center, spacing: 10){
-                HStack{
-                    Image(systemName: "plus")
-                        .font(.largeTitle)
-                        .background(Color.blue)
-                        .clipShape(Circle())
-                        .foregroundColor(.white)
-                }
+                Image(systemName: "plus")
+                    .font(.largeTitle)
+                    .background(Color.blue)
+                    .clipShape(Circle())
+                    .foregroundColor(.white)
                 
                 Text("please click the button")
-            }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }.padding()
         }
-       
     }
 }
 
