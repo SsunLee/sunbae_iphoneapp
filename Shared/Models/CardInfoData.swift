@@ -7,6 +7,25 @@
 
 import SwiftUI
 
+class CardData : ObservableObject {
+    @Published var cardinfos: [CardInfo] = []
+    var id: UUID
+    var title: String
+    var member: [String]
+    var price: String
+     
+    init(id: UUID, title: String, member:[String], price: String) {
+        self.id = UUID()
+        self.title = title
+        self.member = member
+        self.price = price
+    }
+    
+    
+}
+
+
+
 struct CardInfo: Identifiable {
     let id = UUID()
     let title: String
@@ -15,10 +34,8 @@ struct CardInfo: Identifiable {
 }
 
 struct CardHistory {
-    @State static var data = [
+    static var data = [
         CardInfo(title:"ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
-        //CardInfo(title:"Gyodae Icheungjip Sicheong",memger: ["Sunbae","Hosub"],price: "210,000"),
-        //CardInfo(title:"Baekam Sundae Soup",memger: ["Sunbae","Geonsuk","Jeehoon"],price: "65,000"),
         
     ]
 }

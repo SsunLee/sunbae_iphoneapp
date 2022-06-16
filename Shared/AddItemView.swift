@@ -70,6 +70,10 @@ struct AddItemView: View {
                 price: price)
         )
         print("title : \(title) memger : \(setMember) price : \(price)")
+        print("test : \(historys)")
+        //ForEach (historys, id: \.id) { h in
+        //    print(h)
+        //}
     }
     
 }
