@@ -9,9 +9,13 @@ import SwiftUI
 
 struct AddItemView: View {
     @EnvironmentObject var card: CardData
+    //@ObservedObject var card: CardData
+    
     @State var title: String = ""
     @State var member: String = ""
     @State var price: String = ""
+    
+    @State var isActive: Bool = false
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -41,6 +45,8 @@ struct AddItemView: View {
                           .background(Color(uiColor: .secondarySystemBackground))
                     }
                     Spacer()
+      
+                    
                 }
                 .navigationTitle("자산 추가")
                 .toolbar {
@@ -51,7 +57,9 @@ struct AddItemView: View {
                     }) { // plus button
                         Text("Save")
                     }
+                    .disabled(isActive)
                     .accessibilityLabel("New")
+
                 }
             }
             .padding()

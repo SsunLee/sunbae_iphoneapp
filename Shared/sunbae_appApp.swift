@@ -13,7 +13,8 @@ struct sunbae_appApp: App {
         WindowGroup {
             HistoryListView()
                 .environmentObject(
-                    CardData(id: UUID(), title: "", member: [], price: "")
+                    //CardData(id: UUID(), title: "", member: [], price: "")
+                    CardData()
                 )
         }
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct HistoryListView: View {
     //@State var historys:[CardInfo] = CardHistory.data
     @EnvironmentObject var card: CardData
-    //@ObservedObject var historys = card.cardinfos
+    //@ObservedObject var card: CardData
     //var historys = card.cardinfos
  
     var body: some View {
