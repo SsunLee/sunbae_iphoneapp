@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmptyView: View {
+struct EmptyListView: View {
     var body: some View {
         NavigationLink(destination: AddItemView()){
             VStack(alignment: .center, spacing: 10){
@@ -21,12 +21,13 @@ struct EmptyView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }.padding()
+                .frame(maxWidth: .infinity)
         }
     }
 }
 
-struct EmptyView_Previews: PreviewProvider {
+struct EmptyListView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView()
+        EmptyListView()
     }
 }

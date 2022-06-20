@@ -10,6 +10,8 @@ import SwiftUI
 struct HistoryListView: View {
     //@State var historys:[CardInfo] = CardHistory.data
     @EnvironmentObject var card: CardData
+    
+    
     //@ObservedObject var card: CardData
     //var historys = card.cardinfos
  
@@ -40,11 +42,11 @@ struct HistoryListView: View {
                             .onDelete(perform: delete)
                             .onMove(perform: move)
                         } else {
-                            EmptyView()
+                            EmptyListView()
                         }
                     }
                 }
-                .navigationTitle("Sunbae's History")
+                .navigationTitle("순배 자산관리")
                 .navigationBarItems(leading: EditButton())
                 .toolbar {
                     Button(action: {

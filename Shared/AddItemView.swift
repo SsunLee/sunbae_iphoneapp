@@ -17,7 +17,7 @@ struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 15) {
                     Group() {
@@ -49,11 +49,11 @@ struct AddItemView: View {
                                 .background(btnColor)
                                 .cornerRadius(15)
                                 .padding()
-                        }).disabled(isDisable())
+                        }).disabled(isDisable)
                     }
                 }
-                .navigationBarTitle(Text("자산 추가"), displayMode: .inline)
-            }
+                //.navigationBarTitle(Text("자산 추가"), displayMode: .inline)
+            }.padding()
 
 //                .toolbar {
 //                    Button(action: {
@@ -67,21 +67,13 @@ struct AddItemView: View {
 //                    .accessibilityLabel("save")
 //                }
 
-        }.padding()
+       // }
     }
     var btnColor: Color  {
-        return isDisable() ? .gray : .green
+        return isDisable ? .gray : .blue
     }
-    func isDisable() -> Bool {
-        var cnt: Int = 0
-        let lst = [title, member, price]
-        
-        for c in lst {
-            if (c.isEmpty){
-                cnt += 1
-            }
-        }
-        return cnt > 0 ? true : false
+    var isDisable: Bool {
+        return title.isEmpty || member.isEmpty || price.isEmpty
     }
     
     

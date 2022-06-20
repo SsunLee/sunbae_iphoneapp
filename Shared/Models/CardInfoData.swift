@@ -15,7 +15,10 @@ class CardData : ObservableObject {
     var price: String = ""
   
     
-    
+//    init(){
+//        
+//    }
+//    
 //    init(id: UUID, title: String, member:[String], price: String) {
 //        self.id = UUID()
 //        self.title = title
