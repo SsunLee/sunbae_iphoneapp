@@ -17,7 +17,7 @@ struct EmptyListView: View {
                     .clipShape(Circle())
                     .foregroundColor(.white)
                 
-                Text("please click the button")
+                Text("지출 추가하기")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }.padding()

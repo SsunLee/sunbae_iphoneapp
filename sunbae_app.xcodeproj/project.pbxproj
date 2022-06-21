@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415E651286163B8004A8D05 /* TabNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E650286163B8004A8D05 /* TabNaviView.swift */; };
+		0415E652286163B8004A8D05 /* TabNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E650286163B8004A8D05 /* TabNaviView.swift */; };
+		0415E6542861758B004A8D05 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6532861758B004A8D05 /* MyInfoView.swift */; };
+		0415E6552861758B004A8D05 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6532861758B004A8D05 /* MyInfoView.swift */; };
+		0415E6572861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
+		0415E6582861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
 		04813EE1285331090083DDF1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EE0285331090083DDF1 /* Tests_iOS.swift */; };
 		04813EE3285331090083DDF1 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EE2285331090083DDF1 /* Tests_iOSLaunchTests.swift */; };
 		04813EED285331090083DDF1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EEC285331090083DDF1 /* Tests_macOS.swift */; };
@@ -19,8 +25,8 @@
 		04813EF5285331090083DDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04813ECA285331090083DDF1 /* Assets.xcassets */; };
 		04813F08285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		04813F09285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
-		04A599E62859E1E700C64D18 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyView.swift */; };
-		04A599E72859E1E700C64D18 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyView.swift */; };
+		04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
+		04A599E72859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
 		CAEC96CF28577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
 		CAEC96D028577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
 		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
@@ -45,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0415E650286163B8004A8D05 /* TabNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNaviView.swift; sourceTree = "<group>"; };
+		0415E6532861758B004A8D05 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
+		0415E6562861780C004A8D05 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		04813EC8285330FE0083DDF1 /* sunbae_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunbae_appApp.swift; sourceTree = "<group>"; };
 		04813EC9285330FE0083DDF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04813ECA285331090083DDF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,7 +67,7 @@
 		04813EEC285331090083DDF1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		04813EEE285331090083DDF1 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		04813F07285338880083DDF1 /* CardInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoData.swift; sourceTree = "<group>"; };
-		04A599E52859E1E700C64D18 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		04A599E52859E1E700C64D18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +123,9 @@
 				04813EC9285330FE0083DDF1 /* ContentView.swift */,
 				04813ECA285331090083DDF1 /* Assets.xcassets */,
 				CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */,
-				04A599E52859E1E700C64D18 /* EmptyView.swift */,
+				0415E6532861758B004A8D05 /* MyInfoView.swift */,
+				0415E650286163B8004A8D05 /* TabNaviView.swift */,
+				04A599E52859E1E700C64D18 /* EmptyListView.swift */,
 				CAEC96D1285796FB002CBDF5 /* AddItemView.swift */,
 			);
 			path = Shared;
@@ -161,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				04813F07285338880083DDF1 /* CardInfoData.swift */,
+				0415E6562861780C004A8D05 /* SplashView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,12 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415E6542861758B004A8D05 /* MyInfoView.swift in Sources */,
+				0415E651286163B8004A8D05 /* TabNaviView.swift in Sources */,
 				04813EF2285331090083DDF1 /* ContentView.swift in Sources */,
 				CAEC96CF28577C75002CBDF5 /* HistoryListView.swift in Sources */,
 				04813F08285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813EF0285331090083DDF1 /* sunbae_appApp.swift in Sources */,
-				04A599E62859E1E700C64D18 /* EmptyView.swift in Sources */,
+				04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
+				0415E6572861780C004A8D05 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,12 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415E6552861758B004A8D05 /* MyInfoView.swift in Sources */,
+				0415E652286163B8004A8D05 /* TabNaviView.swift in Sources */,
 				04813EF3285331090083DDF1 /* ContentView.swift in Sources */,
 				CAEC96D028577C75002CBDF5 /* HistoryListView.swift in Sources */,
 				04813F09285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813EF1285331090083DDF1 /* sunbae_appApp.swift in Sources */,
-				04A599E72859E1E700C64D18 /* EmptyView.swift in Sources */,
+				04A599E72859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */,
+				0415E6582861780C004A8D05 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

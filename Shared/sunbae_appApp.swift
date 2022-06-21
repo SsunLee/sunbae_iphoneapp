@@ -11,11 +11,13 @@ import SwiftUI
 struct sunbae_appApp: App {
     var body: some Scene {
         WindowGroup {
-            HistoryListView()
-                .environmentObject(
-                    //CardData(id: UUID(), title: "", member: [], price: "")
-                    CardData()
-                )
+            SplashView()
+            //TabNaviView()
+//            HistoryListView()
+//                .environmentObject(
+//                    //CardData(id: UUID(), title: "", member: [], price: "")
+//                    CardData()
+//                )
         }
     }
 }

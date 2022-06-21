@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct HistoryListView: View {
-    //@State var historys:[CardInfo] = CardHistory.data
+    
     @EnvironmentObject var card: CardData
-    
-    
-    //@ObservedObject var card: CardData
-    //var historys = card.cardinfos
- 
+
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
+                    Spacer()
                     List() {
                         if card.cardinfos.count != 0 {
                             ForEach(card.cardinfos, id: \.id) { card in
@@ -28,7 +25,7 @@ struct HistoryListView: View {
                                         .lineLimit(1)
                                         .minimumScaleFactor(0.5)
                                     HStack {
-                                        Label(card.memger.joined(separator: ", "), systemImage: "person.3.sequence")
+                                        Label(card.member.joined(separator: ", "), systemImage: "person.3.sequence")
                                             .font(.subheadline)
                                     }
                                     HStack {
@@ -46,7 +43,7 @@ struct HistoryListView: View {
                         }
                     }
                 }
-                .navigationTitle("순배 자산관리")
+                .navigationTitle("Wallet")
                 .navigationBarItems(leading: EditButton())
                 .toolbar {
                     Button(action: {
@@ -60,10 +57,11 @@ struct HistoryListView: View {
             VStack {
                 Spacer()
                 HStack{
+                    Spacer()
                     NavigationLink(destination: AddItemView()) {
                         Image(systemName: "plus")
-                            .font(.largeTitle)
-                            .frame(width:70, height: 70)
+                            .font(.subheadline)
+                            .frame(width:30, height: 30)
                             .background(Color.blue)
                             .clipShape(Circle())
                             .foregroundColor(.white)
@@ -75,10 +73,10 @@ struct HistoryListView: View {
 }
     
     func addItemRow() {
-        card.cardinfos.append(
-            CardInfo(title:"22ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
-        )
-        print("test : \(card.cardinfos)")
+        //card.cardinfos.append(
+        //    CardInfo(title:"22ISAKAYA",memger: ["Sunbae","Geonsuk","Hosub"],price: "132,000")
+        
+        //print("test : \(card.cardinfos)")
         //ForEach (historys, id: \.id) { h in
         //    print(h)
         //}
