@@ -31,6 +31,8 @@
 		CAEC96D028577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
 		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
 		CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
+		CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */; };
+		CAEC96D62865B1DB002CBDF5 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 		04A599E52859E1E700C64D18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 				CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */,
 				0415E6532861758B004A8D05 /* MyInfoView.swift */,
 				0415E650286163B8004A8D05 /* TabNaviView.swift */,
+				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
 				04A599E52859E1E700C64D18 /* EmptyListView.swift */,
 				CAEC96D1285796FB002CBDF5 /* AddItemView.swift */,
 			);
@@ -343,6 +347,7 @@
 				04813EF0285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
+				CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				0415E6572861780C004A8D05 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +364,7 @@
 				04813EF1285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				04A599E72859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */,
+				CAEC96D62865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				0415E6582861780C004A8D05 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

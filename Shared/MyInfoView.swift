@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyInfoView: View {
+    var isOn: Bool = false
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 8){
@@ -33,6 +35,22 @@ struct MyInfoView: View {
                     .padding()
             }
             Divider()
+            Text("앱 설정")
+                .font(.headline.bold())
+                .foregroundColor(Color.accentColor)
+                .padding()
+            VStack{
+                HStack {
+                    NavigationLink(destination: ThemeView()){
+                        Label("화면테마설정", systemImage: "paintpalette")
+                            .font(.subheadline)
+                        .padding()
+                        Spacer()
+                    }
+
+                }
+                Divider()
+            }
             Spacer()
 
             

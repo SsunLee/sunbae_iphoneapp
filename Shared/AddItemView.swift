@@ -17,43 +17,48 @@ struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        //NavigationView {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 15) {
-                Group() {
-                    Label("상호명",systemImage: "pencil")
-                    TextField("Enter your history", text: $title)
-                      .padding()
-                      .background(Color(uiColor: .secondarySystemBackground))
-                      .font(.subheadline)
-                    Label("Member : ",systemImage: "person.3.sequence")
-                    TextField("Enter a members", text: $member)
-                      .padding()
-                      .background(Color(uiColor: .secondarySystemBackground))
-                      .font(.subheadline)
-                    Label("Price : ",systemImage: "wonsign.circle")
-
-                    TextField("Enter a price", text: $price)
-                      .padding()
-                      .background(Color(uiColor: .secondarySystemBackground))
-                      .font(.subheadline)
-                    Spacer()
-                    
-                    Button(action: {
-                        AddItemRow()
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Text("Save")
-                            .foregroundColor(.white)
-                            .frame(width: 285, height: 40)
-                            .background(btnColor)
-                            .cornerRadius(15)
-                            .padding(1)
-                    }).disabled(isDisable)
+            GeometryReader { geo in
+                ScrollView{
+                    VStack(alignment: .leading, spacing: 15) {
+                        Label("상호명",systemImage: "pencil")
+                        TextField("Enter your history", text: $title)
+                            .padding()
+                          .background(Color(uiColor: .secondarySystemBackground))
+                          .font(.subheadline)
+                        
+                        Label("Member : ",systemImage: "person.3.sequence")
+                        TextField("Enter a members", text: $member)
+                          .padding()
+                          .background(Color(uiColor: .secondarySystemBackground))
+                          .font(.subheadline)
+                        
+                        Label("Price : ",systemImage: "wonsign.circle")
+                        TextField("Enter a price", text: $price)
+                          .padding()
+                          .background(Color(uiColor: .secondarySystemBackground))
+                          .font(.subheadline)
+                          .keyboardType(.numberPad)
+                        Spacer()
+                        
+                        Button(action: {
+                            AddItemRow()
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                                Text("Save")
+                                    .frame(width: geo.size.width, height: 50)
+                                    .background(btnColor)
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                        }).disabled(isDisable)
+                    }
                 }
             }
-            //.navigationBarTitle(Text("자산 추가"), displayMode: .inline)
-        }.padding()
+            .frame(maxWidth: 1500)
+            .padding()
+
+        
+        
+
     }
     var btnColor: Color  {
         return isDisable ? .gray : .blue
