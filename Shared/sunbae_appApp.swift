@@ -9,15 +9,17 @@ import SwiftUI
 
 @main
 struct sunbae_appApp: App {
+    
+    @StateObject var csManager = ColorSchemeManager()
+    
     var body: some Scene {
         WindowGroup {
             SplashView()
-            //TabNaviView()
-//            HistoryListView()
-//                .environmentObject(
-//                    //CardData(id: UUID(), title: "", member: [], price: "")
-//                    CardData()
-//                )
+                .environmentObject(csManager)
+                .onAppear {
+                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                    csManager.applyColorScheme()
+                }
         }
     }
 }

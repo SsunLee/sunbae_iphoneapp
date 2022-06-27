@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ThemeView: View {
+    @Environment(\.colorScheme) var current
+    @EnvironmentObject var csManager: ColorSchemeManager
+    
     var body: some View {
         VStack{
-            List {
-                Text("기기 설정 동일")
-                Text("다크 모드")
-                Text("라이트 모드")
-            }
+            
         }
     }
 }
@@ -22,5 +21,6 @@ struct ThemeView: View {
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
         ThemeView()
+            //.environmentObject(ColorSchemeManager)
     }
 }

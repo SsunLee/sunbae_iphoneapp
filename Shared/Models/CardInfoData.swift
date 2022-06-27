@@ -21,9 +21,9 @@ class CardData : ObservableObject {
     var title: String = ""
     var member: [String] = []
     var price: String = ""
-  
+    var payType: String = ""
+    var insertDate: String = ""
 
-    
     init(){
       getItems()
     }
@@ -36,8 +36,8 @@ class CardData : ObservableObject {
         
         self.cardinfos = saveItems
     }
-    func addItem(title: String, member: [String], price: String ){
-        let newItem = CardInfo(title: title, member: member, price: price)
+    func addItem(title: String, member: [String], price: String, payType: String, insertDate: String = getPayDate()){
+        let newItem = CardInfo(title: title, member: member, price: price, payType: payType, insertDate: insertDate)
         cardinfos.append(newItem)
     }
     
@@ -57,27 +57,51 @@ class CardData : ObservableObject {
             UserDefaults.standard.set(encodeData, forKey: itemsKey)
         }
     }
-    
+    func getCurrentBalence() -> String {
+        @State var pricePlus: String = ""
+        @State var priceMinus: String = ""
+        
+        
+        
+        ForEach(self.cardinfos, id: \.id) { ca in
+            if (ca.payType == "수입") {
+                //pricePlus += ca.price
+            }
+        }
+        
+        return ""
+    }
+
+
 }
 
-
+func getPayDate() -> String {
+    let nowDate = Date() // 현재의 Date (ex: 2020-08-13 09:14:48 +0000)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" // 2020-08-13 16:30
+    return dateFormatter.string(from: nowDate) // 현재 시간의 Date를 format에 맞춰 string으로 반환
+}
 
 struct CardInfo: Identifiable, Codable {
     let id: String
     let title: String
     let member: [String]
     let price: String
+    let payType: String
+    let insertDate: String
     
-    init(id: String = UUID().uuidString, title: String, member: [String], price: String) {
+    init(id: String = UUID().uuidString, title: String, member: [String], price: String, payType: String, insertDate: String = getPayDate()) {
         self.id = id
         self.title = title
         self.member = member
         self.price = price
+        self.payType = payType
+        self.insertDate = insertDate
     }
     
     
     func updateCompletion() -> CardInfo {
-        return CardInfo(title: title, member: member, price: price)
+        return CardInfo(title: title, member: member, price: price, payType: payType, insertDate: insertDate)
     }
 }
 
