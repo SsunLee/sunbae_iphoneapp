@@ -14,51 +14,48 @@ struct MyInfoView: View {
     @State private var selectedColorIndex = 0
     
     var body: some View {
-        NavigationView {
-            
-            VStack(alignment: .leading, spacing: 8){
-                Text("내 정보")
+        VStack(alignment: .leading, spacing: 8){
+            Text("내 정보")
+                .font(.headline.bold())
+                .foregroundColor(Color.accentColor)
+                .padding()
+            HStack{
+                Label("이름", systemImage: "person")
+                    .font(.subheadline)
+                    .padding()
+                Spacer()
+                Text("sunbae.lee")
+                    .padding()
+            } // Hstack
+            Divider()
+            HStack{
+                Label("Email", systemImage: "envelope")
+                    .font(.subheadline)
+                    .padding()
+                Spacer()
+                Text("tnsqo1126@naver.com")
+                    .padding()
+            } // Hstack
+            Divider()
+
+            VStack(alignment: .leading, spacing: 10){
+                Text("앱 설정")
                     .font(.headline.bold())
                     .foregroundColor(Color.accentColor)
                     .padding()
-                HStack{
-                    Label("이름", systemImage: "person")
-                        .font(.subheadline)
-                        .padding()
-                    Spacer()
-                    Text("sunbae.lee")
-                        .padding()
-                }
-                Divider()
-                HStack{
-                    Label("Email", systemImage: "envelope")
-                        .font(.subheadline)
-                        .padding()
-                    Spacer()
-                    Text("tnsqo1126@naver.com")
-                        .padding()
-                }
-                Divider()
-
-                VStack(alignment: .leading, spacing: 10){
-                    Text("앱 설정")
-                        .font(.headline.bold())
-                        .foregroundColor(Color.accentColor)
-                        .padding()
-                    //Form {
-                        Section {
-                            Picker(selection: $csManager.colorScheme, label: Text("화면 테마 설정")) {
-                                Text("기기 설정 동일").tag(ColorScheme.unspecified)
-                                Text("Dark Mode").tag(ColorScheme.dark)
-                                Text("Light Mode").tag(ColorScheme.light)
-                            }
-                        }.padding()
-                   // }
-                }
-                Divider()
-                Spacer()
-            }
-        }
+                //Form {
+                    Section {
+                        Picker(selection: $csManager.colorScheme, label: Text("화면 테마 설정")) {
+                            Text("기기 설정 동일").tag(ColorScheme.unspecified)
+                            Text("Dark Mode").tag(ColorScheme.dark)
+                            Text("Light Mode").tag(ColorScheme.light)
+                        }
+                    }.padding()
+               // }
+            } // Vstck
+            Divider()
+            Spacer()
+        } // Vstack
     }
 }
 

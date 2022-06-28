@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct TabNaviView: View {
+    
     @State var myInfo: String = "내 정보"
+    var isBarHidden: Bool = false
     
     var body: some View {
         
         ZStack {
+
             VStack(spacing: 0) {
                 TopNaviView()
                     .padding(.horizontal, 15)
                     .padding(.bottom)
                     .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    .background(Color.white)
+                    .background(Color.green)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 Spacer()
                 
                 TabView {
+                    
                     HistoryListView()
                         .environmentObject(CardData())
                         .tabItem {

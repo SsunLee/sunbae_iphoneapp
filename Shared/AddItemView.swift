@@ -21,8 +21,12 @@ struct AddItemView: View {
     var body: some View {
             GeometryReader { geo in
                 ScrollView {
-
                     VStack(alignment: .leading, spacing: 15) {
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("X")
+                        })
                         HStack {
                             Text(TextText)
                                 .font(.subheadline.bold())
@@ -87,7 +91,7 @@ struct AddItemView: View {
                         }).disabled(isDisable)
                     }
                 }
-            }
+            }.navigationBarHidden(true)
             .frame(maxWidth: 1500)
             .padding()
 

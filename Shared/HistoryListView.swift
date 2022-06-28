@@ -10,6 +10,7 @@ import SwiftUI
 struct HistoryListView: View {
     
     @EnvironmentObject var card: CardData
+    @ObservedObject var vm = HideBarViewModel()
 
     var body: some View {
         NavigationView {
@@ -22,7 +23,7 @@ struct HistoryListView: View {
                             EmptyListView()
                         }
                     }
-                }
+                } // Vstack
             VStack {
                 Spacer()
                 HStack{
@@ -34,16 +35,20 @@ struct HistoryListView: View {
                             .background(Color.green)
                             .clipShape(Circle())
                             .foregroundColor(.white)
-                        }
+                        }.navigationBarHidden(vm.isHidden)
                     }.padding().shadow(radius: 2)
                 } // Vstack
             } // Zstack
         } // VanigationVeiw
         .navigationBarTitle("", displayMode: .inline)
-        .navigationBarHidden(true)
-        .edgesIgnoringSafeArea(.top)
+        //.edgesIgnoringSafeArea(.top)
+        .environmentObject(vm)
     } // body View
 } // struct view
+
+class HideBarViewModel: ObservableObject {
+    @Published var isHidden = true
+}
 
 extension View {
     func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
