@@ -71,13 +71,14 @@ struct AddItemView: View {
                               .font(.subheadline)
                             
                             Label("Price : ",systemImage: "wonsign.circle")
+                            //TextField("Enter a price", value: $price, format: formatter)
                             TextField("Enter a price", text: $price)
                               .padding()
                               .background(Color(uiColor: .secondarySystemBackground))
                               .font(.subheadline)
                               .keyboardType(.numberPad)
                             Spacer()
-                        }
+                        } // group
                         
                         Button(action: {
                             AddItemRow()
@@ -94,9 +95,8 @@ struct AddItemView: View {
             }.navigationBarHidden(true)
             .frame(maxWidth: 1500)
             .padding()
-
+        
     }
-    
     enum WalletType: String, CaseIterable, Identifiable {
         case 수입
         case 지출
@@ -104,7 +104,7 @@ struct AddItemView: View {
         var id: WalletType { self }
         
     }
-    
+
     var btnColor: Color  {
         return isDisable ? .gray : .blue
     }

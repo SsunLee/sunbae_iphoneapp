@@ -13,6 +13,8 @@
 		0415E6552861758B004A8D05 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6532861758B004A8D05 /* MyInfoView.swift */; };
 		0415E6572861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
 		0415E6582861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
+		0466865F286C0D1600FE573B /* FixedPayAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466865E286C0D1600FE573B /* FixedPayAreaView.swift */; };
+		04668660286C0D1600FE573B /* FixedPayAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466865E286C0D1600FE573B /* FixedPayAreaView.swift */; };
 		04813EE1285331090083DDF1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EE0285331090083DDF1 /* Tests_iOS.swift */; };
 		04813EE3285331090083DDF1 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EE2285331090083DDF1 /* Tests_iOSLaunchTests.swift */; };
 		04813EED285331090083DDF1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EEC285331090083DDF1 /* Tests_macOS.swift */; };
@@ -68,6 +70,7 @@
 		0415E650286163B8004A8D05 /* TabNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNaviView.swift; sourceTree = "<group>"; };
 		0415E6532861758B004A8D05 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		0415E6562861780C004A8D05 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		0466865E286C0D1600FE573B /* FixedPayAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedPayAreaView.swift; sourceTree = "<group>"; };
 		04813EC8285330FE0083DDF1 /* sunbae_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunbae_appApp.swift; sourceTree = "<group>"; };
 		04813EC9285330FE0083DDF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04813ECA285331090083DDF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 				CAEC96DD286786FF002CBDF5 /* WalletListView.swift */,
 				0415E6532861758B004A8D05 /* MyInfoView.swift */,
 				0415E650286163B8004A8D05 /* TabNaviView.swift */,
+				0466865E286C0D1600FE573B /* FixedPayAreaView.swift */,
 				CAEC96E328697437002CBDF5 /* TopNaviView.swift */,
 				CAEC96E6286977E1002CBDF5 /* LogoView.swift */,
 				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
@@ -379,6 +383,7 @@
 				CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
 				0415E6572861780C004A8D05 /* SplashView.swift in Sources */,
+				0466865F286C0D1600FE573B /* FixedPayAreaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +407,7 @@
 				CAEC96D62865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				CAEC96D928674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
 				0415E6582861780C004A8D05 /* SplashView.swift in Sources */,
+				04668660286C0D1600FE573B /* FixedPayAreaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,22 +57,43 @@ class CardData : ObservableObject {
             UserDefaults.standard.set(encodeData, forKey: itemsKey)
         }
     }
+    
     func getCurrentBalence() -> String {
-        @State var pricePlus: String = ""
-        @State var priceMinus: String = ""
+        var allCardInfos:[CardInfo]?
+        var plusCal: Int = 0
+        var minusCal: Int = 0
         
-        
-        
-        ForEach(self.cardinfos, id: \.id) { ca in
-            if (ca.payType == "수입") {
-                //pricePlus += ca.price
+        if let data = UserDefaults.standard.value(forKey: itemsKey) as? Data {
+            //allCardInfos = try? PropertyListDecoder().decode(Array<CardInfo>.self, from: data)
+            allCardInfos = try? JSONDecoder().decode([CardInfo].self, from: data)
+            
+            if let allCardInfos = allCardInfos {
+                for ca in allCardInfos {
+                    let _price = Int(ca.price)!
+                    if (ca.payType == "수입") {
+                        plusCal += _price
+                    } else {
+                        minusCal += _price
+                    }
+                }
             }
         }
         
-        return ""
+        var result = String(plusCal - minusCal)
+        result = setNumberFormatter(strPrice: result)
+        
+        return result
     }
 
 
+}
+func setNumberFormatter(strPrice: String) -> String{
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    let _price = Int(strPrice)
+    let result = numberFormatter.string(for: _price)!
+    
+    return result
 }
 
 func getPayDate() -> String {

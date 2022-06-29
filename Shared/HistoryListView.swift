@@ -11,7 +11,7 @@ struct HistoryListView: View {
     
     @EnvironmentObject var card: CardData
     @ObservedObject var vm = HideBarViewModel()
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -38,7 +38,18 @@ struct HistoryListView: View {
                         }.navigationBarHidden(vm.isHidden)
                     }.padding().shadow(radius: 2)
                 } // Vstack
+                VStack {
+                    //Text("가용 금액 : \(card.getCurrentBalence())")
+                    Spacer()
+                    HStack {
+                        FixedPayAreaView()
+                        Spacer()
+                    }
+                    
+                }
+                
             } // Zstack
+
         } // VanigationVeiw
         .navigationBarTitle("", displayMode: .inline)
         //.edgesIgnoringSafeArea(.top)

@@ -22,7 +22,7 @@ struct WalletListView: View {
                         .minimumScaleFactor(0.5)
                         Spacer()
                         Text(card.payType)
-                            .font(.subheadline)
+                            .font(.system(size:10))
                             .frame(width: 40, height: 7, alignment: .center)
                             .padding()
                             .foregroundColor(.white)
@@ -38,17 +38,26 @@ struct WalletListView: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         Spacer()
-                        Label(String(card.price), systemImage: "wonsign.circle")
+                        Label(setNumberFormatter(strPrice: card.price), systemImage: "wonsign.circle")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                         
-                    }
-                }
-            }
+                    } // hstack
+                } // vastck
+            } // foreach
             .onDelete(perform: delete)
             .onMove(perform: move)
-        }
+        } // cardinfos
+        
+    } // body view
+    func setNumberFormatter(strPrice: String) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let _price = Int(strPrice)
+        let result = numberFormatter.string(for: _price)!
+        
+        return result
     }
     
     func delete(indexSet: IndexSet) {
