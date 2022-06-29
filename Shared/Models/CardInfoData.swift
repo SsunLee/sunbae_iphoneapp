@@ -64,7 +64,7 @@ class CardData : ObservableObject {
         var minusCal: Int = 0
         
         if let data = UserDefaults.standard.value(forKey: itemsKey) as? Data {
-            //allCardInfos = try? PropertyListDecoder().decode(Array<CardInfo>.self, from: data)
+
             allCardInfos = try? JSONDecoder().decode([CardInfo].self, from: data)
             
             if let allCardInfos = allCardInfos {

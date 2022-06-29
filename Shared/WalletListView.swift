@@ -22,7 +22,7 @@ struct WalletListView: View {
                         .minimumScaleFactor(0.5)
                         Spacer()
                         Text(card.payType)
-                            .font(.system(size:10))
+                            .font(.subheadline)
                             .frame(width: 40, height: 7, alignment: .center)
                             .padding()
                             .foregroundColor(.white)
