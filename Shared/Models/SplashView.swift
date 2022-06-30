@@ -12,12 +12,10 @@ struct SplashView: View {
     
     @State private var isAnimated: Bool = false
     
-    var repeatingAnimation: Animation {
-        Animation
-            .linear(duration: 2)
-            .repeatForever()
-            .delay(0.5)
-    }
+    var repeatingAnimation: Animation = Animation
+        .linear(duration: 2)
+        .repeatForever()
+        .delay(0.5)
     
     var body: some View {
         VStack {
@@ -43,8 +41,6 @@ struct SplashView: View {
         }
     }
 }
-
-
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
