@@ -26,6 +26,8 @@ struct AddItemView: View {
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("X")
+                                .font(.subheadline)
+                                .padding()
                         })
                         HStack {
                             Text(TextText)
@@ -58,21 +60,21 @@ struct AddItemView: View {
                         Spacer()
                         
                         Group{
-                            Label("상호명",systemImage: "pencil")
-                            TextField("Enter your history", text: $title)
+                            Label("사용처",systemImage: "pencil")
+                            TextField("ex) 월급 or 저녁 or 삼성역전", text: $title)
                                 .padding()
                               .background(Color(uiColor: .secondarySystemBackground))
                               .font(.subheadline)
                             
-                            Label("Member : ",systemImage: "person.3.sequence")
-                            TextField("Enter a members", text: $member)
+                            Label("이름 : ",systemImage: "person.3.sequence")
+                            TextField("ex) 이순배, 홍길동", text: $member)
                               .padding()
                               .background(Color(uiColor: .secondarySystemBackground))
                               .font(.subheadline)
                             
-                            Label("Price : ",systemImage: "wonsign.circle")
+                            Label("금액 : ",systemImage: "wonsign.circle")
                             //TextField("Enter a price", value: $price, format: formatter)
-                            TextField("Enter a price", text: $price)
+                            TextField("ex) 32000", text: $price)
                               .padding()
                               .background(Color(uiColor: .secondarySystemBackground))
                               .font(.subheadline)
