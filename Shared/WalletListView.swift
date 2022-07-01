@@ -9,11 +9,14 @@ import SwiftUI
 
 struct WalletListView: View {
     
-    @EnvironmentObject var card: CardData
+    @EnvironmentObject var cards: CardData
     
     var body: some View {
-        if card.cardinfos.count != 0 {
-            ForEach(card.cardinfos, id: \.id) { card in
+        if cards.cardinfos.count != 0 {
+            ForEach(cards.cardinfos, id: \.id) { card in
+                NavigationLink(destination: WalletDetailView(card: card)) {
+                    
+                }
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
                         Text(card.title)
@@ -49,6 +52,8 @@ struct WalletListView: View {
             .onDelete(perform: delete)
             .onMove(perform: move)
         } // cardinfos
+
+
         
     } // body view
     func setNumberFormatter(strPrice: String) -> String{
@@ -61,24 +66,21 @@ struct WalletListView: View {
     }
     
     func delete(indexSet: IndexSet) {
-        card.cardinfos.remove(atOffsets: indexSet)
+        cards.cardinfos.remove(atOffsets: indexSet)
     }
     func move(indices: IndexSet, newOffset: Int) {
-        card.cardinfos.move(fromOffsets: indices, toOffset: newOffset)
+        cards.cardinfos.move(fromOffsets: indices, toOffset: newOffset)
     }
 
     func payTypeColor(payTypeString: String) -> Color {
-        
         if payTypeString == "수입" {
             return Color.blue
         } else {
             return Color.red
         }
     }
-    
 }
  
-        
 struct WalletListView_Previews: PreviewProvider {
     static var previews: some View {
         WalletListView()

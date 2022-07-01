@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TopNaviView: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     @State private var isAnimated: Bool = false
     
     
@@ -17,7 +17,7 @@ struct TopNaviView: View {
             Button(action: {}, label:{
                 Image(systemName: "magnifyingglass")
                     .font(.title3)
-                    .foregroundColor(.black)
+                    .foregroundColor(iconColor)
             })
             
             Spacer()
@@ -37,7 +37,7 @@ struct TopNaviView: View {
                 ZStack {
                     Image(systemName: "cart")
                         .font(.title3)
-                    .foregroundColor(.black)
+                        .foregroundColor(iconColor)
                     
                     Circle()
                         .fill(Color.red)
@@ -48,6 +48,10 @@ struct TopNaviView: View {
             })
         }
     }
+    var iconColor: Color {
+        return colorScheme == .dark ? .white : .black
+    }
+
 }
 
 struct TopNaviView_Previews: PreviewProvider {

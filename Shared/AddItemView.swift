@@ -106,7 +106,7 @@ struct AddItemView: View {
         var id: WalletType { self }
         
     }
-
+    
     var btnColor: Color  {
         return isDisable ? .gray : .blue
     }

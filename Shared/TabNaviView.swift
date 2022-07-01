@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct TabNaviView: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     @State var myInfo: String = "내 정보"
     var isBarHidden: Bool = false
     
     var body: some View {
-        
         ZStack {
-
             VStack(spacing: 0) {
                 TopNaviView()
                     .padding(.horizontal, 15)
                     .padding(.bottom)
-                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    .background(Color.white)
+                    .padding(.top, getSafeAreaTop())
+                    .background(NaviColor)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 Spacer()
                 
                 TabView {
-                    
                     HistoryListView()
                         .environmentObject(CardData())
                         .tabItem {
@@ -47,7 +44,21 @@ struct TabNaviView: View {
             } // Vstack
         } // Zstack
         .ignoresSafeArea(.all, edges: .top)
+    } // Body View
+    
+    var NaviColor: Color {
+        return colorScheme == .dark ? .black : .white
     }
+} // Struct
+
+func getSafeAreaTop() -> CGFloat {
+    let keyWindow = UIApplication.shared.connectedScenes
+        .filter({$0.activationState == .foregroundActive})
+        .map({$0 as? UIWindowScene})
+        .compactMap({$0})
+        .first?.windows
+        .filter({$0.isKeyWindow}).first
+    return (keyWindow?.safeAreaInsets.top)!
 }
 
 struct TabNaviView_Previews: PreviewProvider {

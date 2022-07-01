@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct LogoView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         HStack {
             Text("Sun".uppercased())
                 .font(.title3)
                 .fontWeight(.black)
-                .foregroundColor(.black)
+                .foregroundColor(LogoColor)
             Image("sun")
                 .resizable()
                 .scaledToFit()
@@ -22,10 +24,16 @@ struct LogoView: View {
             Text("Bae".uppercased())
                 .font(.title3)
                 .fontWeight(.black)
-                .foregroundColor(.black)
+                .foregroundColor(LogoColor)
         }
+    } // body
+    
+    var LogoColor: Color {
+        return colorScheme == .dark ? .white : .black
     }
-}
+    
+} // struct
+
 
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {

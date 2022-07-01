@@ -29,6 +29,8 @@
 		04813F09285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
 		04A599E72859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
+		04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
+		04C14A5F286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
 		CAEC96CF28577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
 		CAEC96D028577C75002CBDF5 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */; };
 		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
@@ -85,6 +87,7 @@
 		04813EEE285331090083DDF1 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		04813F07285338880083DDF1 /* CardInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoData.swift; sourceTree = "<group>"; };
 		04A599E52859E1E700C64D18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		04C14A5D286EB3550090CD5C /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 				0415E6532861758B004A8D05 /* MyInfoView.swift */,
 				0415E650286163B8004A8D05 /* TabNaviView.swift */,
 				0466865E286C0D1600FE573B /* FixedPayAreaView.swift */,
+				04C14A5D286EB3550090CD5C /* WalletDetailView.swift */,
 				CAEC96E328697437002CBDF5 /* TopNaviView.swift */,
 				CAEC96E6286977E1002CBDF5 /* LogoView.swift */,
 				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
@@ -369,6 +373,7 @@
 			files = (
 				0415E6542861758B004A8D05 /* MyInfoView.swift in Sources */,
 				0415E651286163B8004A8D05 /* TabNaviView.swift in Sources */,
+				04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */,
 				CAEC96DB286780CE002CBDF5 /* ThemeSetting.swift in Sources */,
 				04813EF2285331090083DDF1 /* ContentView.swift in Sources */,
 				CAEC96E428697437002CBDF5 /* TopNaviView.swift in Sources */,
@@ -393,6 +398,7 @@
 			files = (
 				0415E6552861758B004A8D05 /* MyInfoView.swift in Sources */,
 				0415E652286163B8004A8D05 /* TabNaviView.swift in Sources */,
+				04C14A5F286EB3550090CD5C /* WalletDetailView.swift in Sources */,
 				CAEC96DC286780CE002CBDF5 /* ThemeSetting.swift in Sources */,
 				04813EF3285331090083DDF1 /* ContentView.swift in Sources */,
 				CAEC96E528697437002CBDF5 /* TopNaviView.swift in Sources */,

@@ -15,7 +15,7 @@ struct FixedPayAreaView: View {
             Button(action: {
                 //
             }, label: {
-                //Text("가용 금액 : 444,000")
+                //Text("가용 금액 : 444,000,000")
                 Text("가용 금액 : \(card.getCurrentBalence())")
                     .font(.title3.bold())
             })
@@ -27,6 +27,7 @@ struct FixedPayAreaView: View {
         }.padding()
     }
 }
+
 
 struct FixedPayAreaView_Previews: PreviewProvider {
     static var previews: some View {
