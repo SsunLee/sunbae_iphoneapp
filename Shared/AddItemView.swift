@@ -50,7 +50,7 @@ struct AddItemView: View {
                                 .frame(width: 100, height: 7, alignment: .center)
                                 .padding()
                                 .accentColor(.white)
-                                .background(Color.accentColor)
+                                .background(isTypeColor)
                                 .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
                             }
                             .padding()
@@ -105,6 +105,9 @@ struct AddItemView: View {
         
         var id: WalletType { self }
         
+    }
+    var isTypeColor: Color {
+        return selectedTypeIndex.rawValue == "수입" ? .accentColor : .red
     }
     
     var btnColor: Color  {

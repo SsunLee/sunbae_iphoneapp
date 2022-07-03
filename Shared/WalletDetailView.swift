@@ -28,12 +28,13 @@ struct WalletDetailView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("X")
+                            .font(.subheadline)
                             .padding()
                             .font(.subheadline)
                     })
                     HStack {
-                        Text("지출 상세 내역")
-                            .font(.subheadline)
+                        Text("\(card.payType) 상세 내역")
+                            .font(.subheadline.bold())
                             .foregroundColor(.secondary)
                         Spacer()
                         Button(action:{
@@ -44,7 +45,7 @@ struct WalletDetailView: View {
                     } // Hstack
                     Spacer()
                     Group{
-                        Text("지출처")
+                        Text("\(card.payType)처")
                         TextField(card.title, text: $title).onAppear() {
                             self.title = card.title
                         }

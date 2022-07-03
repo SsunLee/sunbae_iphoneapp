@@ -15,7 +15,15 @@ struct WalletListView: View {
         if cards.cardinfos.count != 0 {
             ForEach(cards.cardinfos, id: \.id) { card in
                 NavigationLink(destination: WalletDetailView(card: card)) {
-                    VStack(alignment: .leading, spacing: 5) {
+                    HStack(spacing: 5) {
+                        Image("star")
+                            .padding(1)
+//                            .overlay(RoundedRectangle(cornerRadius: 10)
+//                                .stroke(Color.gray, lineWidth: 1))
+                            .shadow(radius: 10)
+                    }
+                    VStack(alignment: .leading, spacing: 10) {
+
                         HStack {
                             Text(card.title)
                                 .font(.subheadline)
@@ -25,8 +33,8 @@ struct WalletListView: View {
                             Spacer()
                             Text(card.payType)
                                 .font(.subheadline)
-                                .frame(width: 40, height: 7, alignment: .center)
-                                .padding()
+                                .frame(width: 40, height: 15, alignment: .center)
+                                .padding(5)
                                 .foregroundColor(.white)
                                 .background(payTypeColor(payTypeString: card.payType))
                                 .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
