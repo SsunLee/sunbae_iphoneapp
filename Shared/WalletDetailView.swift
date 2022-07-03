@@ -13,69 +13,89 @@ struct WalletDetailView: View {
     @State var member: String = ""
     @State var price: String = ""
     
-    var card: CardInfo
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    public var card: CardInfo
+    
+//    self.member = card.member.joined(separator: ", ")
+//    self.price = card.price
+
     var body: some View {
         GeometryReader { geo in
-            VStack(alignment: .leading, spacing: 20) {
-                HStack {
-                    Text("지출 상세 내역")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    
+            ScrollView {
+                VStack(alignment: .leading, spacing: 15) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("X")
+                            .padding()
+                            .font(.subheadline)
+                    })
+                    HStack {
+                        Text("지출 상세 내역")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Button(action:{
+                            // action
+                        }, label: {
+                            Text("삭제")
+                        }).padding()
+                    } // Hstack
+                    Spacer()
+                    Group{
+                        Text("지출처")
+                        TextField(card.title, text: $title).onAppear() {
+                            self.title = card.title
+                        }
+                          .padding()
+                          .background(Color(uiColor: .secondarySystemBackground))
+                          .font(.subheadline)
+                          .cornerRadius(7)
+                        
+                        Text("사용자")
+                        TextField(card.member.joined(separator: ", "), text: $member).onAppear() {
+                            self.member = card.member.joined(separator: ", ")
+                        }
+                          .padding()
+                          .background(Color(uiColor: .secondarySystemBackground))
+                          .font(.subheadline)
+                          .cornerRadius(7)
+                        
+                        Text("금액")
+                        TextField(card.price, text: $price).onAppear() {
+                            self.price = card.price
+                        }
+                          .padding()
+                          .background(Color(uiColor: .secondarySystemBackground))
+                          .font(.subheadline)
+                          .keyboardType(.numberPad)
+                          .cornerRadius(7)
+                        
+                        Spacer()
+                    } // group
+
                     Spacer()
                     
-                    Button(action:{
-                        // action
+                    Button(action: {
+                        
                     }, label: {
-                        Text("삭제")
-                    })
-                } // Hstack
-                
-                Spacer()
-                
-                Group {
-                    Text("지출처")
-                    TextField(card.title, text: $title)
-                        .background(Color(uiColor: .secondarySystemBackground))
-                        .font(.subheadline)
-                        .padding()
-                    Text("사용자")
-                    TextField(
-                        card.member.joined(separator: ", "), text: $member)
-                        .background(Color(uiColor: .secondarySystemBackground))
-                        .font(.subheadline)
-                        .padding()
-                    Text("금액")
-                    TextField(card.price, text: $price)
-                        .background(Color(uiColor: .secondarySystemBackground))
-                        .font(.subheadline)
-                        .padding()
-                        .keyboardType(.numberPad)
-                }
-                Spacer()
-                
-                Button(action: {
+                        Text("수정하기")
+                            .frame(width: geo.size.width, height: 50)
+                            .font(.subheadline.bold())
+                            .background(btnColor)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(5)
+                    }).disabled(isDisable)
                     
-                }, label: {
-                    Text("수정하기")
-                        .frame(width: geo.size.width, height: 50)
-                        .background(btnColor)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(5)
-                }).disabled(isDisable)
-
-                
-            } // Vstack
+                } // Vstack
+            }
         } // Geo body
+        .navigationBarHidden(true)
         .padding()
         .frame(maxWidth: 1500)
 
     } // body
-    
-    func StringsToString() {
-        
-    }
     
     var btnColor: Color  {
         return isDisable ? .gray : .blue
@@ -86,8 +106,8 @@ struct WalletDetailView: View {
     
 } // struct
 
-struct WalletDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        WalletDetailView(card: CardInfo)
-    }
-}
+//struct WalletDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        //WalletDetailView(CardInfo())
+//    }
+//}

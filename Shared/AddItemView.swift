@@ -73,7 +73,6 @@ struct AddItemView: View {
                               .font(.subheadline)
                             
                             Label("금액 : ",systemImage: "wonsign.circle")
-                            //TextField("Enter a price", value: $price, format: formatter)
                             TextField("ex) 32000", text: $price)
                               .padding()
                               .background(Color(uiColor: .secondarySystemBackground))
@@ -94,7 +93,8 @@ struct AddItemView: View {
                         }).disabled(isDisable)
                     }
                 }
-            }.navigationBarHidden(true)
+            } // geomegryReader
+            .navigationBarHidden(true)
             .frame(maxWidth: 1500)
             .padding()
         

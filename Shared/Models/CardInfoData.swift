@@ -60,8 +60,8 @@ class CardData : ObservableObject {
     
     func getCurrentBalence() -> String {
         var allCardInfos:[CardInfo]?
-        var plusCal: Int = 0
-        var minusCal: Int = 0
+        var plusCal: Int64 = 0
+        var minusCal: Int64 = 0
         
         if let data = UserDefaults.standard.value(forKey: itemsKey) as? Data {
 
@@ -69,12 +69,14 @@ class CardData : ObservableObject {
             
             if let allCardInfos = allCardInfos {
                 for ca in allCardInfos {
-                    let _price = Int(ca.price)!
-                    if (ca.payType == "수입") {
-                        plusCal += _price
-                    } else {
-                        minusCal += _price
+                    if let _price = Int64(ca.price) {
+                        if (ca.payType == "수입") {
+                            plusCal += _price
+                        } else {
+                            minusCal += _price
+                        }
                     }
+
                 }
             }
         }

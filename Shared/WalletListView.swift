@@ -15,39 +15,40 @@ struct WalletListView: View {
         if cards.cardinfos.count != 0 {
             ForEach(cards.cardinfos, id: \.id) { card in
                 NavigationLink(destination: WalletDetailView(card: card)) {
-                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack {
+                            Text(card.title)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                            Spacer()
+                            Text(card.payType)
+                                .font(.subheadline)
+                                .frame(width: 40, height: 7, alignment: .center)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(payTypeColor(payTypeString: card.payType))
+                                .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                        }
+                        HStack {
+                            Label(card.member.joined(separator: ", "), systemImage: "person.3.sequence")
+                                .font(.subheadline)
+                        }
+                        HStack {
+                            Text(card.insertDate)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                            Label(setNumberFormatter(strPrice: card.price), systemImage: "wonsign.circle")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            
+                        } // hstack
+                    } // vastck
                 }
-                VStack(alignment: .leading, spacing: 5) {
-                    HStack {
-                        Text(card.title)
-                            .fontWeight(.semibold)
-                            .lineLimit(1)
-                        .minimumScaleFactor(0.5)
-                        Spacer()
-                        Text(card.payType)
-                            .font(.subheadline)
-                            .frame(width: 40, height: 7, alignment: .center)
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(payTypeColor(payTypeString: card.payType))
-                            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
-                    }
-                    HStack {
-                        Label(card.member.joined(separator: ", "), systemImage: "person.3.sequence")
-                            .font(.subheadline)
-                    }
-                    HStack {
-                        Text(card.insertDate)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                        Spacer()
-                        Label(setNumberFormatter(strPrice: card.price), systemImage: "wonsign.circle")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                        
-                    } // hstack
-                } // vastck
+
             } // foreach
             .onDelete(perform: delete)
             .onMove(perform: move)
