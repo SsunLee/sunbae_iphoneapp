@@ -25,7 +25,7 @@ struct TabNaviView: View {
                 
                 TabView {
                     HistoryListView()
-                        .environmentObject(CardData())
+                        //.environmentObject(CardData())
                         .tabItem {
                             Image(systemName: "dollarsign.circle")
                             Text("자산")

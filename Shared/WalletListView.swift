@@ -20,10 +20,9 @@ struct WalletListView: View {
                             .padding(1)
 //                            .overlay(RoundedRectangle(cornerRadius: 10)
 //                                .stroke(Color.gray, lineWidth: 1))
-                            .shadow(radius: 10)
+                            //.shadow(radius: 10)
                     }
                     VStack(alignment: .leading, spacing: 10) {
-
                         HStack {
                             Text(card.title)
                                 .font(.subheadline)
@@ -52,18 +51,14 @@ struct WalletListView: View {
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
-                            
                         } // hstack
                     } // vastck
                 }
-
             } // foreach
             .onDelete(perform: delete)
             .onMove(perform: move)
         } // cardinfos
 
-
-        
     } // body view
     func setNumberFormatter(strPrice: String) -> String{
         let numberFormatter = NumberFormatter()

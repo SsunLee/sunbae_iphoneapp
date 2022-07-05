@@ -18,28 +18,30 @@ struct SplashView: View {
         .delay(0.5)
     
     var body: some View {
-        VStack {
-            if self.isActive {
-                TabNaviView()
-            } else {
-                LogoView()
-                    .opacity(isAnimated ? 1 : 0)
-                    .offset(x: 0, y: isAnimated ? 0 : -25)
-                    .onAppear(perform: {
-                        withAnimation(self.repeatingAnimation) {
-                            isAnimated.toggle()
-                        }
-                    })
-            }
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                withAnimation {
-                    self.isActive = true
+        NavigationView {
+            VStack {
+                if self.isActive {
+                    TabNaviView()
+                } else {
+                    LogoView()
+//                        .opacity(isAnimated ? 1 : 0)
+//                        .offset(x: 0, y: isAnimated ? 0 : -10)
+//                        .onAppear(perform: {
+//                            withAnimation(self.repeatingAnimation) {
+//                                isAnimated.toggle()
+//                            }
+//                        })
                 }
-            }
+            } // vstack
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    withAnimation {
+                        self.isActive = true
+                    }
+                }
+            } // onAppear
         }
-    }
+    } // body view
 }
 
 struct SplashView_Previews: PreviewProvider {

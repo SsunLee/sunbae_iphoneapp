@@ -16,6 +16,7 @@ struct sunbae_appApp: App {
         WindowGroup {
             SplashView()
                 .environmentObject(csManager)
+                .environmentObject(CardData())
                 .onAppear {
                     UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
                     csManager.applyColorScheme()

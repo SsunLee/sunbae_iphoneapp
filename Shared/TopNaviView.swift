@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TopNaviView: View {
     @Environment(\.colorScheme) var colorScheme
-    @State private var isAnimated: Bool = false
+    //@State private var isAnimated: Bool = false
     
     
     var body: some View {
@@ -23,19 +23,19 @@ struct TopNaviView: View {
             Spacer()
             
             LogoView()
-                .opacity(isAnimated ? 1 : 0)
-                .offset(x: 0, y: isAnimated ? 0 : -25)
-                .onAppear(perform: {
-                    withAnimation(.easeOut(duration: 0.5)) {
-                        isAnimated.toggle()
-                    }
-                })
+//                .opacity(isAnimated ? 1 : 0)  // 투명도
+//                .offset(x: 0, y: isAnimated ? 0 : -10) //
+//                .onAppear(perform: {
+//                    withAnimation(.easeOut(duration: 0.5)) {
+//                        isAnimated.toggle()
+//                    }
+//                })
             
             Spacer()
             
             Button(action: {}, label:{
                 ZStack {
-                    Image(systemName: "cart")
+                    Image(systemName: "bell")
                         .font(.title3)
                         .foregroundColor(iconColor)
                     

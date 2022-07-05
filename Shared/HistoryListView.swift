@@ -13,7 +13,6 @@ struct HistoryListView: View {
     @ObservedObject var vm = HideBarViewModel()
     
     var body: some View {
-        NavigationView {
             ZStack {
                 VStack {
                     List() {
@@ -42,18 +41,14 @@ struct HistoryListView: View {
                     //Text("가용 금액 : \(card.getCurrentBalence())")
                     Spacer()
                     HStack {
-                        FixedPayAreaView()
+                        FixedPayAreaView() // 가용금액
                         Spacer()
                     }
-                    
                 }
-                
             } // Zstack
-
-        } // VanigationVeiw
-        .navigationBarTitle("", displayMode: .inline)
-        //.edgesIgnoringSafeArea(.top)
-        .environmentObject(vm)
+            .navigationBarTitle("", displayMode: .inline)
+            .edgesIgnoringSafeArea(.top)
+            .environmentObject(vm)
     } // body View
 } // struct view
 
