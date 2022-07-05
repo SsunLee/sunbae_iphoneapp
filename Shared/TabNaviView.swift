@@ -13,37 +13,40 @@ struct TabNaviView: View {
     var isBarHidden: Bool = false
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 0) {
-                TopNaviView()
-                    .padding(.horizontal, 15)
-                    .padding(.bottom)
-                    .padding(.top, getSafeAreaTop())
-                    .background(NaviColor)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-                Spacer()
-                
-                TabView {
-                    HistoryListView()
-                        //.environmentObject(CardData())
-                        .tabItem {
-                            Image(systemName: "dollarsign.circle")
-                            Text("자산")
-                        }
-                    Text("Main")
-                        .tabItem {
-                            Image(systemName: "house.circle")
-                            Text("Home")
-                        }
-                    MyInfoView()
-                        .tabItem {
-                            Image(systemName: "info.circle")
-                            Text(myInfo)
-                        }
-                }.edgesIgnoringSafeArea(.top)
-            } // Vstack
-        } // Zstack
-        .ignoresSafeArea(.all, edges: .top)
+        NavigationView {
+            ZStack {
+                VStack(spacing: 0) {
+                    TopNaviView()
+                        .padding(.horizontal, 15)
+                        .padding(.bottom)
+                        .padding(.top, getSafeAreaTop())
+                        .background(NaviColor)
+                        //.shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                    Spacer()
+                    
+                    TabView {
+                        HistoryListView()
+                            //.environmentObject(CardData())
+                            .tabItem {
+                                Image(systemName: "dollarsign.circle")
+                                Text("자산")
+                            }
+                        Text("Main")
+                            .tabItem {
+                                Image(systemName: "house.circle")
+                                Text("Home")
+                            }
+                        MyInfoView()
+                            .tabItem {
+                                Image(systemName: "info.circle")
+                                Text(myInfo)
+                            }
+                    }.edgesIgnoringSafeArea(.top)
+                } // Vstack
+            } // Zstack
+            .ignoresSafeArea(.all, edges: .top)
+        }
+
     } // Body View
     
     var NaviColor: Color {

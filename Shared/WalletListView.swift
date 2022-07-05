@@ -10,7 +10,7 @@ import SwiftUI
 struct WalletListView: View {
     
     @EnvironmentObject var cards: CardData
-    
+
     var body: some View {
         if cards.cardinfos.count != 0 {
             ForEach(cards.cardinfos, id: \.id) { card in
@@ -18,9 +18,6 @@ struct WalletListView: View {
                     HStack(spacing: 5) {
                         Image("star")
                             .padding(1)
-//                            .overlay(RoundedRectangle(cornerRadius: 10)
-//                                .stroke(Color.gray, lineWidth: 1))
-                            //.shadow(radius: 10)
                     }
                     VStack(alignment: .leading, spacing: 10) {
                         HStack {
@@ -39,7 +36,7 @@ struct WalletListView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
                         }
                         HStack {
-                            Label(card.member.joined(separator: ", "), systemImage: "person.3.sequence")
+                            Label(card.member.joined(separator: ", "), systemImage: "person.3")
                                 .font(.subheadline)
                         }
                         HStack {
@@ -53,11 +50,13 @@ struct WalletListView: View {
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         } // hstack
                     } // vastck
-                }
+                } // navigationLink
+                
             } // foreach
             .onDelete(perform: delete)
             .onMove(perform: move)
-        } // cardinfos
+
+        } // cardinfos if
 
     } // body view
     func setNumberFormatter(strPrice: String) -> String{

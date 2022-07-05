@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyInfoView: View {
     var isOn: Bool = false
-    var ColorValues = ["기기 설정 동일", "다크모드", "라이트모드"]
+    var ColorValues = ["기기 설정 동일", "Dark Mode", "Light Mode"]
     @EnvironmentObject var csManager: ColorSchemeManager
     @State private var selectedColorIndex = 0
     
@@ -46,9 +46,9 @@ struct MyInfoView: View {
                 //Form {
                     Section {
                         Picker(selection: $csManager.colorScheme, label: Text("화면 테마 설정")) {
-                            Text("기기 설정 동일").tag(ColorScheme.unspecified)
-                            Text("Dark Mode").tag(ColorScheme.dark)
-                            Text("Light Mode").tag(ColorScheme.light)
+                            Text(ColorValues[0]).tag(ColorScheme.unspecified)
+                            Text(ColorValues[1]).tag(ColorScheme.dark)
+                            Text(ColorValues[2]).tag(ColorScheme.light)
                         }
                     }.padding()
                // }

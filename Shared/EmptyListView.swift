@@ -22,7 +22,7 @@ struct EmptyListView: View {
                     .foregroundColor(.secondary)
             }.padding()
                 .frame(maxWidth: .infinity)
-        }
+        }.navigationBarHidden(true)
     }
 }
 
