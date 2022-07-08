@@ -21,9 +21,6 @@ struct WalletDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     public var card: CardInfo
-    
-//    self.member = card.member.joined(separator: ", ")
-//    self.price = card.price
 
     var body: some View {
         GeometryReader { geo in
@@ -117,7 +114,6 @@ struct WalletDetailView: View {
                     Spacer()
                     
                     Button(action: {
-                        
                         ModifyItemRow()
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
@@ -171,9 +167,6 @@ struct WalletDetailView: View {
         setMember = member.split(separator: ",").map({String($0)})
         
         cards.updateItem(item: CardInfo(id: card.id, title: title, member: setMember, price: price, payType: selectedTypeIndex.rawValue))
-        
-        
-//        card.addItem(title: title, member: setMember, price: price, payType: selectedTypeIndex.rawValue)
         
     }
     var isTypeColor: Color {

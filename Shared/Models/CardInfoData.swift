@@ -42,7 +42,6 @@ class CardData : ObservableObject {
     }
     
     func deleteItem(item: CardInfo){
-        //cardinfos.remove(atOffsets: indexSet)
         if let index = cardinfos.firstIndex(where: {$0.id == item.id}) {
             cardinfos.remove(at: index)
         }
@@ -125,7 +124,6 @@ struct CardInfo: Identifiable, Codable {
         self.payType = payType
         self.insertDate = insertDate
     }
-    
     
     func updateCompletion() -> CardInfo {
         return CardInfo(title: title, member: member, price: price, payType: payType, insertDate: insertDate)
