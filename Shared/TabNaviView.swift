@@ -11,6 +11,8 @@ struct TabNaviView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var myInfo: String = "내 정보"
     var isBarHidden: Bool = false
+    @State private var searchText = ""
+    
     
     var body: some View {
         NavigationView {
@@ -46,6 +48,7 @@ struct TabNaviView: View {
             } // Zstack
             .ignoresSafeArea(.all, edges: .top)
         }
+        //.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
 
     } // Body View
     

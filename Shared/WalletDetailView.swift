@@ -13,6 +13,11 @@ struct WalletDetailView: View {
     @State var member: String = ""
     @State var price: String = ""
     
+    @State private var selectedTypeIndex: WalletType = .수입
+    @State private var TextText: String = "구분을 선택해주세요. 😀"
+    
+    @EnvironmentObject var cards: CardData
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     public var card: CardInfo
@@ -39,11 +44,44 @@ struct WalletDetailView: View {
                         Spacer()
                         Button(action:{
                             // action
+                            deleteItem()
+                            self.presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("삭제")
                         }).padding()
                     } // Hstack
                     Spacer()
+                    HStack {
+                        Text(TextText)
+                            .font(.subheadline.bold())
+                        Spacer()
+                        Menu {
+                            Picker(selection: $selectedTypeIndex, label: Text("")) {
+                                ForEach(WalletType.allCases, content: { t in
+                                    Text(t.rawValue.capitalized)
+                                        .font(.body.bold())
+                                })
+                            }
+                        } label: {
+                            Button(action: {
+                                
+                            }, label: {
+                                Text(selectedValue.rawValue)
+                                    .font(.title3.bold())
+                            })
+                            .frame(width: 100, height: 7, alignment: .center)
+                            .padding()
+                            .accentColor(.white)
+                            .background(isTypeColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                        }
+                        .onAppear() {
+                            selectedTypeIndex = selectedValue
+                        }
+                        .padding()
+                        .id(selectedValue)
+                    }
+                    Divider()
                     Group{
                         Text("\(card.payType)처")
                         TextField(card.title, text: $title).onAppear() {
@@ -80,6 +118,8 @@ struct WalletDetailView: View {
                     
                     Button(action: {
                         
+                        ModifyItemRow()
+                        self.presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("수정하기")
                             .frame(width: geo.size.width, height: 50)
@@ -98,6 +138,15 @@ struct WalletDetailView: View {
 
     } // body
     
+    var selectedValue: WalletType {
+        if card.payType == "수입" {
+            return .수입
+        }
+        else {
+            return .지출
+        }
+    }
+    
     var btnColor: Color  {
         return isDisable ? .gray : .blue
     }
@@ -105,10 +154,32 @@ struct WalletDetailView: View {
         return title.isEmpty || member.isEmpty || price.isEmpty
     }
     
+    enum WalletType: String, CaseIterable, Identifiable {
+        case 수입
+        case 지출
+        
+        var id: WalletType { self }
+        
+    }
+    func deleteItem() {
+        cards.deleteItem(item: card)
+    }
+    
+    func ModifyItemRow() {
+        var setMember: [String]
+        
+        setMember = member.split(separator: ",").map({String($0)})
+        
+        cards.updateItem(item: CardInfo(id: card.id, title: title, member: setMember, price: price, payType: selectedTypeIndex.rawValue))
+        
+        
+//        card.addItem(title: title, member: setMember, price: price, payType: selectedTypeIndex.rawValue)
+        
+    }
+    var isTypeColor: Color {
+        return selectedTypeIndex.rawValue == "수입" ? .accentColor : .red
+    }
+
+    
 } // struct
 
-//struct WalletDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        //WalletDetailView(CardInfo())
-//    }
-//}

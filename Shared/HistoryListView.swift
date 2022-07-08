@@ -57,8 +57,6 @@ struct HistoryListView: View {
                                 } // vastck
                                 
                             }
-                            .navigationBarHidden(true)// navigationLink
-                            
                         } // foreach
                         .onDelete(perform: delete)
                         .onMove(perform: move)
@@ -66,7 +64,10 @@ struct HistoryListView: View {
                     } else {
                         EmptyListView()
                     }
-                }
+                } // list
+                .listStyle(.plain)
+                .navigationBarHidden(true)// navigationLink
+                .navigationBarTitle("", displayMode: .inline)
                 //.listStyle(.plain)
                 
             } // Vstack
@@ -93,8 +94,9 @@ struct HistoryListView: View {
                 }
             }
         } // Zstack
-        .navigationBarTitle("", displayMode: .inline)
-        .edgesIgnoringSafeArea(.top)
+
+        //
+        //.edgesIgnoringSafeArea(.top)
     } // body View
     
     
