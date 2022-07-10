@@ -47,7 +47,10 @@ class CardData : ObservableObject {
         }
         
     }
-    func moveItem(from: IndexSet, to: Int){
+    func delete(indexSet: IndexSet) {
+        cardinfos.remove(atOffsets: indexSet)
+    }
+    func move(from: IndexSet, to: Int){
         cardinfos.move(fromOffsets: from, toOffset: to)
     }
     func updateItem(item: CardInfo){

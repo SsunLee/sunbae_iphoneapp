@@ -27,7 +27,7 @@ struct TabNaviView: View {
                     Spacer()
                     
                     TabView {
-                        HistoryListView()
+                        AssetsView()
                             //.environmentObject(CardData())
                             .tabItem {
                                 Image(systemName: "dollarsign.circle")
