@@ -63,7 +63,7 @@ struct WalletDetailView: View {
                             Button(action: {
                                 
                             }, label: {
-                                Text(selectedValue.rawValue)
+                                Text(selectedTypeIndex.rawValue)
                                     .font(.title3.bold())
                             })
                             .frame(width: 100, height: 7, alignment: .center)

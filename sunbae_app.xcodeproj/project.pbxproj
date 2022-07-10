@@ -155,6 +155,7 @@
 				0415E650286163B8004A8D05 /* TabNaviView.swift */,
 				0466865E286C0D1600FE573B /* FixedPayAreaView.swift */,
 				04C14A5D286EB3550090CD5C /* WalletDetailView.swift */,
+				CAEC96EF287AC461002CBDF5 /* View */,
 				CAEC96E328697437002CBDF5 /* TopNaviView.swift */,
 				CAEC96E6286977E1002CBDF5 /* LogoView.swift */,
 				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
@@ -211,6 +212,13 @@
 				CAEC96E028678B65002CBDF5 /* NavigationBarModifier.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CAEC96EF287AC461002CBDF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

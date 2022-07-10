@@ -27,9 +27,7 @@ struct HistoryListView: View {
                                 VStack(alignment: .leading, spacing: 10) {
                                     HStack {
                                         Text(card.title)
-                                            .font(.subheadline)
-                                            .fontWeight(.semibold)
-                                            .lineLimit(1)
+                                            .font(.subheadline.bold())
                                         .minimumScaleFactor(0.5)
                                         Spacer()
                                         Text(card.payType)
