@@ -11,10 +11,12 @@ struct AssetsView: View {
     
     @EnvironmentObject var cards: CardData
     @State private var searchText = ""
+    var commonOption: commonOption
 
     var body: some View {
         ZStack {
             VStack {
+                    //.shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 List {
                     if cards.cardinfos.count != 0 {
                         PayCardView()
@@ -57,6 +59,6 @@ struct AssetsView: View {
 
 struct AssetsView_Previews: PreviewProvider {
     static var previews: some View {
-        AssetsView()
+        AssetsView(commonOption: commonOption())
     }
 }

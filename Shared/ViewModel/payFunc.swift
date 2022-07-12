@@ -11,11 +11,9 @@ import SwiftUI
 
 struct AddItemFunc {
     let card: CardData
-    let selectedTypeIndex: WalletType
     
-    init(card: CardData, selectedTypeIndex: WalletType) {
+    init(card: CardData) {
         self.card = card
-        self.selectedTypeIndex = selectedTypeIndex
     }
 }
 
@@ -28,8 +26,8 @@ extension AddItemFunc {
         var id: WalletType { self }
         
     }
-    var isTypeColor: Color {
-        return selectedTypeIndex.rawValue == "수입" ? .accentColor : .red
+    func isTypeColor(strType: String) -> Color {
+        return strType == "수입" ? .accentColor : .red
     }
     
     var btnColor: Color  {
@@ -39,12 +37,20 @@ extension AddItemFunc {
         return card.title.isEmpty || card.member.isEmpty || card.price.isEmpty
     }
     
+    func setNumberFormatter(strPrice: String) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let _price = Int(strPrice)
+        let result = numberFormatter.string(for: _price)!
+        
+        return result
+    }
     
-    mutating func AddItemRow(setMember: String) {
+    mutating func AddItemRow(setMember: String, strType: String) {
         
         let members = setMember.split(separator: ",").map({String($0)})
         
-        card.addItem(title: card.title, member: members, price: card.price, payType: selectedTypeIndex.rawValue)
+        card.addItem(title: card.title, member: members, price: card.price, payType: strType)
         
     }
 }

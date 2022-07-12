@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0415E651286163B8004A8D05 /* TabNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E650286163B8004A8D05 /* TabNaviView.swift */; };
-		0415E652286163B8004A8D05 /* TabNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E650286163B8004A8D05 /* TabNaviView.swift */; };
 		0415E6542861758B004A8D05 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6532861758B004A8D05 /* MyInfoView.swift */; };
-		0415E6552861758B004A8D05 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6532861758B004A8D05 /* MyInfoView.swift */; };
 		0415E6572861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
 		0415E6582861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
 		0466865F286C0D1600FE573B /* FixedPayAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466865E286C0D1600FE573B /* FixedPayAreaView.swift */; };
-		04668660286C0D1600FE573B /* FixedPayAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466865E286C0D1600FE573B /* FixedPayAreaView.swift */; };
 		04813EE1285331090083DDF1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EE0285331090083DDF1 /* Tests_iOS.swift */; };
 		04813EE3285331090083DDF1 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EE2285331090083DDF1 /* Tests_iOSLaunchTests.swift */; };
 		04813EED285331090083DDF1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813EEC285331090083DDF1 /* Tests_macOS.swift */; };
@@ -28,14 +25,12 @@
 		04813F08285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		04813F09285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
-		04A599E72859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
 		04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
-		04C14A5F286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
+		CAE4D56F287DC0BF00118284 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = CAE4D56E287DC0BF00118284 /* SimpleToast */; };
+		CAE4D572287DCC1200118284 /* CommonOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D571287DCC1200118284 /* CommonOption.swift */; };
 		CAEC96CF28577C75002CBDF5 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* AssetsView.swift */; };
 		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
-		CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
 		CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */; };
-		CAEC96D62865B1DB002CBDF5 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */; };
 		CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D728674AF8002CBDF5 /* ColorSchemeManager.swift */; };
 		CAEC96D928674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D728674AF8002CBDF5 /* ColorSchemeManager.swift */; };
 		CAEC96DB286780CE002CBDF5 /* ThemeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96DA286780CE002CBDF5 /* ThemeSetting.swift */; };
@@ -43,12 +38,13 @@
 		CAEC96E128678B65002CBDF5 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96E028678B65002CBDF5 /* NavigationBarModifier.swift */; };
 		CAEC96E228678B65002CBDF5 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96E028678B65002CBDF5 /* NavigationBarModifier.swift */; };
 		CAEC96E428697437002CBDF5 /* TopNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96E328697437002CBDF5 /* TopNaviView.swift */; };
-		CAEC96E528697437002CBDF5 /* TopNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96E328697437002CBDF5 /* TopNaviView.swift */; };
 		CAEC96E7286977E1002CBDF5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96E6286977E1002CBDF5 /* LogoView.swift */; };
-		CAEC96E8286977E1002CBDF5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96E6286977E1002CBDF5 /* LogoView.swift */; };
 		CAEC96F1287AC615002CBDF5 /* PayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96F0287AC615002CBDF5 /* PayCardView.swift */; };
 		CAEC96F4287AC978002CBDF5 /* PayCardFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96F3287AC978002CBDF5 /* PayCardFunctions.swift */; };
-		CAEC96F6287ACD12002CBDF5 /* AddItemFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96F5287ACD12002CBDF5 /* AddItemFunc.swift */; };
+		CAEC96F6287ACD12002CBDF5 /* payFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96F5287ACD12002CBDF5 /* payFunc.swift */; };
+		CAEC96FC287D9AF7002CBDF5 /* DutchPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96FB287D9AF7002CBDF5 /* DutchPayView.swift */; };
+		CAEC96FF287DA89C002CBDF5 /* CustomTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96FE287DA89C002CBDF5 /* CustomTextViewModel.swift */; };
+		CAEC9701287DADBA002CBDF5 /* DutchPayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC9700287DADBA002CBDF5 /* DutchPayFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +84,7 @@
 		04813F07285338880083DDF1 /* CardInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoData.swift; sourceTree = "<group>"; };
 		04A599E52859E1E700C64D18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		04C14A5D286EB3550090CD5C /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
+		CAE4D571287DCC1200118284 /* CommonOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonOption.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -98,7 +95,10 @@
 		CAEC96E6286977E1002CBDF5 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		CAEC96F0287AC615002CBDF5 /* PayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCardView.swift; sourceTree = "<group>"; };
 		CAEC96F3287AC978002CBDF5 /* PayCardFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCardFunctions.swift; sourceTree = "<group>"; };
-		CAEC96F5287ACD12002CBDF5 /* AddItemFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemFunc.swift; sourceTree = "<group>"; };
+		CAEC96F5287ACD12002CBDF5 /* payFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = payFunc.swift; sourceTree = "<group>"; };
+		CAEC96FB287D9AF7002CBDF5 /* DutchPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutchPayView.swift; sourceTree = "<group>"; };
+		CAEC96FE287DA89C002CBDF5 /* CustomTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextViewModel.swift; sourceTree = "<group>"; };
+		CAEC9700287DADBA002CBDF5 /* DutchPayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutchPayFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE4D56F287DC0BF00118284 /* SimpleToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,16 +152,7 @@
 				04813EC8285330FE0083DDF1 /* sunbae_appApp.swift */,
 				04813EC9285330FE0083DDF1 /* ContentView.swift */,
 				04813ECA285331090083DDF1 /* Assets.xcassets */,
-				0415E6532861758B004A8D05 /* MyInfoView.swift */,
-				0415E650286163B8004A8D05 /* TabNaviView.swift */,
-				0466865E286C0D1600FE573B /* FixedPayAreaView.swift */,
-				04C14A5D286EB3550090CD5C /* WalletDetailView.swift */,
 				CAEC96EF287AC461002CBDF5 /* View */,
-				CAEC96E328697437002CBDF5 /* TopNaviView.swift */,
-				CAEC96E6286977E1002CBDF5 /* LogoView.swift */,
-				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
-				04A599E52859E1E700C64D18 /* EmptyListView.swift */,
-				CAEC96D1285796FB002CBDF5 /* AddItemView.swift */,
 				CAEC96F2287AC6AB002CBDF5 /* ViewModel */,
 			);
 			path = Shared;
@@ -215,11 +207,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CAE4D570287DCBFD00118284 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CAE4D571287DCC1200118284 /* CommonOption.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CAEC96EF287AC461002CBDF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CAEC96CE28577C75002CBDF5 /* AssetsView.swift */,
-				CAEC96F0287AC615002CBDF5 /* PayCardView.swift */,
+				CAEC96F8287D9A56002CBDF5 /* Common */,
+				CAEC96F7287D9A38002CBDF5 /* AssetsTab */,
+				CAEC96FA287D9ADF002CBDF5 /* DutchPay */,
+				CAEC96F9287D9A72002CBDF5 /* MyInfo */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,10 +229,61 @@
 		CAEC96F2287AC6AB002CBDF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CAE4D570287DCBFD00118284 /* Common */,
+				CAEC96FD287DA85B002CBDF5 /* CustomView */,
 				CAEC96F3287AC978002CBDF5 /* PayCardFunctions.swift */,
-				CAEC96F5287ACD12002CBDF5 /* AddItemFunc.swift */,
+				CAEC96F5287ACD12002CBDF5 /* payFunc.swift */,
+				CAEC9700287DADBA002CBDF5 /* DutchPayFunc.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAEC96F7287D9A38002CBDF5 /* AssetsTab */ = {
+			isa = PBXGroup;
+			children = (
+				0466865E286C0D1600FE573B /* FixedPayAreaView.swift */,
+				04C14A5D286EB3550090CD5C /* WalletDetailView.swift */,
+				CAEC96CE28577C75002CBDF5 /* AssetsView.swift */,
+				CAEC96F0287AC615002CBDF5 /* PayCardView.swift */,
+				CAEC96D1285796FB002CBDF5 /* AddItemView.swift */,
+				04A599E52859E1E700C64D18 /* EmptyListView.swift */,
+			);
+			path = AssetsTab;
+			sourceTree = "<group>";
+		};
+		CAEC96F8287D9A56002CBDF5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CAEC96E6286977E1002CBDF5 /* LogoView.swift */,
+				CAEC96E328697437002CBDF5 /* TopNaviView.swift */,
+				0415E650286163B8004A8D05 /* TabNaviView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CAEC96F9287D9A72002CBDF5 /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0415E6532861758B004A8D05 /* MyInfoView.swift */,
+				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		CAEC96FA287D9ADF002CBDF5 /* DutchPay */ = {
+			isa = PBXGroup;
+			children = (
+				CAEC96FB287D9AF7002CBDF5 /* DutchPayView.swift */,
+			);
+			path = DutchPay;
+			sourceTree = "<group>";
+		};
+		CAEC96FD287DA85B002CBDF5 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CAEC96FE287DA89C002CBDF5 /* CustomTextViewModel.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +302,9 @@
 			dependencies = (
 			);
 			name = "sunbae_app (iOS)";
+			packageProductDependencies = (
+				CAE4D56E287DC0BF00118284 /* SimpleToast */,
+			);
 			productName = "sunbae_app (iOS)";
 			productReference = 04813ECF285331090083DDF1 /* sunbae_app.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +397,9 @@
 				Base,
 			);
 			mainGroup = 04813EC2285330FE0083DDF1;
+			packageReferences = (
+				CAE4D56D287DC0BF00118284 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+			);
 			productRefGroup = 04813ED0285331090083DDF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,19 +456,23 @@
 				04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */,
 				CAEC96DB286780CE002CBDF5 /* ThemeSetting.swift in Sources */,
 				04813EF2285331090083DDF1 /* ContentView.swift in Sources */,
+				CAEC96FC287D9AF7002CBDF5 /* DutchPayView.swift in Sources */,
 				CAEC96E428697437002CBDF5 /* TopNaviView.swift in Sources */,
 				CAEC96E7286977E1002CBDF5 /* LogoView.swift in Sources */,
-				CAEC96F6287ACD12002CBDF5 /* AddItemFunc.swift in Sources */,
+				CAEC96F6287ACD12002CBDF5 /* payFunc.swift in Sources */,
 				CAEC96F1287AC615002CBDF5 /* PayCardView.swift in Sources */,
 				CAEC96CF28577C75002CBDF5 /* AssetsView.swift in Sources */,
 				04813F08285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813EF0285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				CAEC96E128678B65002CBDF5 /* NavigationBarModifier.swift in Sources */,
+				CAE4D572287DCC1200118284 /* CommonOption.swift in Sources */,
 				04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
 				CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
 				0415E6572861780C004A8D05 /* SplashView.swift in Sources */,
+				CAEC9701287DADBA002CBDF5 /* DutchPayFunc.swift in Sources */,
+				CAEC96FF287DA89C002CBDF5 /* CustomTextViewModel.swift in Sources */,
 				0466865F286C0D1600FE573B /* FixedPayAreaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,22 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0415E6552861758B004A8D05 /* MyInfoView.swift in Sources */,
-				0415E652286163B8004A8D05 /* TabNaviView.swift in Sources */,
-				04C14A5F286EB3550090CD5C /* WalletDetailView.swift in Sources */,
 				CAEC96DC286780CE002CBDF5 /* ThemeSetting.swift in Sources */,
 				04813EF3285331090083DDF1 /* ContentView.swift in Sources */,
-				CAEC96E528697437002CBDF5 /* TopNaviView.swift in Sources */,
-				CAEC96E8286977E1002CBDF5 /* LogoView.swift in Sources */,
 				04813F09285338880083DDF1 /* CardInfoData.swift in Sources */,
 				04813EF1285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				CAEC96E228678B65002CBDF5 /* NavigationBarModifier.swift in Sources */,
-				04A599E72859E1E700C64D18 /* EmptyListView.swift in Sources */,
-				CAEC96D3285796FB002CBDF5 /* AddItemView.swift in Sources */,
-				CAEC96D62865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				CAEC96D928674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
 				0415E6582861780C004A8D05 /* SplashView.swift in Sources */,
-				04668660286C0D1600FE573B /* FixedPayAreaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +871,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAE4D56D287DC0BF00118284 /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/SimpleToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAE4D56E287DC0BF00118284 /* SimpleToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAE4D56D287DC0BF00118284 /* XCRemoteSwiftPackageReference "SimpleToast" */;
+			productName = SimpleToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04813EC3285330FE0083DDF1 /* Project object */;
 }

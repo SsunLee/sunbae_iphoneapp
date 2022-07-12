@@ -23,25 +23,26 @@ struct TabNaviView: View {
                         .padding(.bottom)
                         .padding(.top, getSafeAreaTop())
                         .background(NaviColor)
-                        //.shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-                    Spacer()
                     
                     TabView {
-                        AssetsView()
+                        AssetsView(commonOption: commonOption())
                             //.environmentObject(CardData())
                             .tabItem {
                                 Image(systemName: "dollarsign.circle")
                                 Text("자산")
+                                    .font(.subheadline.bold())
                             }
-                        Text("Main")
+                        DutchPayView(text: $searchText )
                             .tabItem {
-                                Image(systemName: "house.circle")
-                                Text("Home")
+                                Image(systemName: "circle.grid.cross")
+                                Text("정산")
+                                    .font(.subheadline.bold())
                             }
                         MyInfoView()
                             .tabItem {
                                 Image(systemName: "info.circle")
                                 Text(myInfo)
+                                    .font(.subheadline.bold())
                             }
                     }.edgesIgnoringSafeArea(.top)
                 } // Vstack
