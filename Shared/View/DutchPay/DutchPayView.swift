@@ -88,7 +88,7 @@ struct DutchPayView: View {
                             .foregroundColor(Color.accentColor)
                             Spacer()
                             Button(action: {
-                                if showToast {
+                                if !text.isEmpty {
                                     UIPasteboard.general.string = text
                                     showToast.toggle()
                                     print("찍히는지 : \(text)")
@@ -106,7 +106,7 @@ struct DutchPayView: View {
                         Divider()
                         UITextViewRepresentable(text: $text, isFocused: $isFocused, inputHeight: $inputHeight)
                           .frame(height: inputHeight)
-                          .padding(.vertical, 4)
+                          .padding(.vertical, 10)
                           .focused($focusedField, equals: .txtField)
                           .disabled(isDisable)
                     }
