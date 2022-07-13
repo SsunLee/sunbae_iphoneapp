@@ -82,11 +82,6 @@ struct DouchView: View {
     }
 }
 
-struct testtest {
-    
-    
-    
-}
 
 
 
