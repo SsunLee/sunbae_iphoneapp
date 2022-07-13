@@ -26,6 +26,7 @@
 		04813F09285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
 		04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
+		04E8910E287E63C600E3CD58 /* DouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8910D287E63C600E3CD58 /* DouchView.swift */; };
 		CAE4D56F287DC0BF00118284 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = CAE4D56E287DC0BF00118284 /* SimpleToast */; };
 		CAE4D572287DCC1200118284 /* CommonOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D571287DCC1200118284 /* CommonOption.swift */; };
 		CAEC96CF28577C75002CBDF5 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* AssetsView.swift */; };
@@ -84,6 +85,7 @@
 		04813F07285338880083DDF1 /* CardInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoData.swift; sourceTree = "<group>"; };
 		04A599E52859E1E700C64D18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		04C14A5D286EB3550090CD5C /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
+		04E8910D287E63C600E3CD58 /* DouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouchView.swift; sourceTree = "<group>"; };
 		CAE4D571287DCC1200118284 /* CommonOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonOption.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				CAEC96FB287D9AF7002CBDF5 /* DutchPayView.swift */,
+				04E8910D287E63C600E3CD58 /* DouchView.swift */,
 			);
 			path = DutchPay;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				CAEC9701287DADBA002CBDF5 /* DutchPayFunc.swift in Sources */,
 				CAEC96FF287DA89C002CBDF5 /* CustomTextViewModel.swift in Sources */,
 				0466865F286C0D1600FE573B /* FixedPayAreaView.swift in Sources */,
+				04E8910E287E63C600E3CD58 /* DouchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
