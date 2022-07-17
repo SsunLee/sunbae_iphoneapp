@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct DutchView: View {
-    @ObservedObject var dm = dutchModel()
+    @ObservedObject var sun =  DutchInfo()
+    
     
     var body: some View {
+        
         ScrollView {
             VStack (alignment: .leading, spacing: 10) {
                 HStack {
-                    Text("더치페이 계산기")
+                    Text("😍 더치페이 계산기")
                         .font(.title3.bold())
                     Spacer()
                     Button(action: {
                         // action
-                        dm.prices.append("")
-                        print(dm.prices)
+                        //dm.prices.append("")
+                        
+                        sun.addItem(title: "z", member: ["zz"], price: "z")
+                        
                     },label: {
                         HStack {
                             Image(systemName: "plus.circle.fill")
@@ -31,7 +35,8 @@ struct DutchView: View {
                 }
                 .padding()
                 Divider()
-                if (dm.prices.count == 0) {
+                // sun.dutchdatas
+                if (sun.dutchdatas.count == 0) {
                     Spacer()
                     VStack {
                         HStack {
@@ -44,46 +49,53 @@ struct DutchView: View {
                         }
                     }
                     .frame(alignment: .bottom)
-                    
                 }
             } // vstac
-            ForEach(0..<dm.prices.count, id:\.self) { index in
+            
+            //let sunDatas: [DutchData] = sun.dutchdatas
+            //sun.dutchdatas
+            ForEach(sun.dutchdatas.indices, id:\.offset) { index in
                 VStack (alignment: .leading, spacing: 10) {
                     Spacer()
-                    Group {
                         HStack {
                             Button(action: {
-                                // action
-                                dm.prices.remove(at: index)
+                                sun.dutchdatas.remove(at: index)
+                                //sun.dutchdatas.remove(at: index)
                             }, label: {
                                 Image(systemName: "minus.circle.fill")
                                     .foregroundColor(.red)
                                     .padding(.horizontal)
                             })
-                            Text("정산 \(index+1)회차 🤩")
+                            Text("정산 \(Int(index+1))회차 🤩")
                                 .padding()
                                 .foregroundColor(.accentColor)
                             Spacer()
                         } // hstack
-                        TextField("정산 금액", text: $dm.prices[index])
+                        //$sun.dutchdatas[index].price
+                        TextField("정산 금액", text: $sun.dutchdatas[index].price)
                             .padding()
                             .background(Color(uiColor: .secondarySystemBackground))
                             .font(.subheadline)
                             .cornerRadius(15)
                             .keyboardType(.numberPad)
                             .submitLabel(.next)
-                        ForEach(1..<dm.members.count, id:\.self) { m_index in
+                        // 여기부터
+                    
+                    ForEach(sun.dutchdatas[index], id:\.self) { m_index in
                             HStack {
                                 Button(action: {
-                                    dm.members.remove(at: m_index)
+
+                                    //sun.dutchdatas[index].members.remove(at: m_index)
+                                    sun.deleteMember(indexArray: index, indexAt: m_index)
                                 }, label: {
                                     Image(systemName: "minus.circle.fill")
                                         .foregroundColor(.red)
                                         .padding(.horizontal)
                                 })
-                                
+
                                 Spacer()
-                                TextField("정산 멤버", text:$dm.members[m_index])
+                                
+                                TextField("정산 멤버", text:sun.dutchdatas[index].$members[m_index])
                                     .padding()
                                     .background(Color(uiColor: .secondarySystemBackground))
                                     .font(.subheadline)
@@ -91,12 +103,12 @@ struct DutchView: View {
                                     .submitLabel(.next)
                             } // hstack
                         } // foreach 1
-                    } // group
-                    Group {
+                    // 여기까지
                         HStack {
                             Button(action: {
                                 // action
-                                dm.members.append("")
+                                //sun.dutchdatas[index].members.append("")
+                                sun.addMember(indexArray: index, member: "")
                             }, label: {
                                 Image(systemName: "plus.circle.fill")
                                     .foregroundColor(.green)
@@ -104,96 +116,31 @@ struct DutchView: View {
                             })
                             Spacer()
                             
-                            TextField("정산 멤버", text:$dm.members[0])
-                                .padding()
-                                .background(Color(uiColor: .secondarySystemBackground))
-                                .font(.subheadline)
-                                .cornerRadius(15)
-                                .submitLabel(.next)
+//                            TextField("정산 멤버", text:$sun.dutchdatas[index].members[0])
+//                                .padding()
+//                                .background(Color(uiColor: .secondarySystemBackground))
+//                                .font(.subheadline)
+//                                .cornerRadius(15)
+//                                .submitLabel(.next)
                         } // hstack
-                    } // group
                 } // vstack
-            } // foreach
+            }
          
         } // scrollview
     } // body
 } // end
 
-struct particial_dutchView: View {
-    @ObservedObject var dm = dutchModel()
-    
-    var body: some View {
-        ForEach(0..<dm.prices.count, id:\.self) { index in
-            VStack (alignment: .leading, spacing: 10) {
-                Group {
-                    HStack {
-                        Button(action: {
-                            // action
-                            dm.prices.remove(at: index)
-                        }, label: {
-                            Image(systemName: "minus.circle.fill")
-                                .foregroundColor(.red)
-                                .padding(.horizontal)
-                        })
-                        Text("정산 \(index+1)회")
-                            .padding()
-                            .foregroundColor(.accentColor)
-                        Spacer()
-                    } // hstack
-                    TextField("정산 금액", text: $dm.prices[index])
-                        .padding()
-                        .background(Color(uiColor: .secondarySystemBackground))
-                        .font(.subheadline)
-                        .cornerRadius(15)
-                        .keyboardType(.numberPad)
-                        .submitLabel(.next)
-                    ForEach(1..<dm.members.count, id:\.self) { m_index in
-                        HStack {
-                            Button(action: {
-                                dm.members.removeLast()
-                            }, label: {
-                                Image(systemName: "minus.circle.fill")
-                                    .foregroundColor(.red)
-                                    .padding(.horizontal)
-                            })
-                            
-                            Spacer()
-                            TextField("정산 멤버", text:$dm.members[m_index])
-                                .padding()
-                                .background(Color(uiColor: .secondarySystemBackground))
-                                .font(.subheadline)
-                                .cornerRadius(15)
-                                .submitLabel(.next)
-                        } // hstack
-                    } // foreach 1
-                } // group
-                Group {
-                    HStack {
-                        Button(action: {
-                            // action
-                            dm.members.append("")
-                        }, label: {
-                            Image(systemName: "plus.circle.fill")
-                                .foregroundColor(.green)
-                                .padding(.horizontal)
-                        })
-                        Spacer()
-                        TextField("정산 멤버", text:$dm.members[0])
-                            .padding()
-                            .background(Color(uiColor: .secondarySystemBackground))
-                            .font(.subheadline)
-                            .cornerRadius(15)
-                            .submitLabel(.next)
-                    } // hstack
-                } // group
-            } // vstack
-        } // foreach
-    }
-}
+//struct DutchMergeView: View {
+//    @ObservedObject var sun = DutchInfo()
+//
+//    var body: some View {
+//
+//    }
+//}
 
-
-struct DutchView_Previews: PreviewProvider {
-    static var previews: some View {
-        DutchView()
-    }
-}
+//struct DutchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DutchView(sun: DutchData(id: "", title: "", members: [], price: "", payDate: ""))
+//
+//    }
+//}
