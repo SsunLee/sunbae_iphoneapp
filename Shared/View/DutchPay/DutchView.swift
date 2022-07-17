@@ -75,7 +75,7 @@ struct DutchView: View {
                         ForEach(1..<dm.members.count, id:\.self) { m_index in
                             HStack {
                                 Button(action: {
-                                    dm.members.removeLast()
+                                    dm.members.remove(at: m_index)
                                 }, label: {
                                     Image(systemName: "minus.circle.fill")
                                         .foregroundColor(.red)
@@ -103,6 +103,7 @@ struct DutchView: View {
                                     .padding(.horizontal)
                             })
                             Spacer()
+                            
                             TextField("정산 멤버", text:$dm.members[0])
                                 .padding()
                                 .background(Color(uiColor: .secondarySystemBackground))
