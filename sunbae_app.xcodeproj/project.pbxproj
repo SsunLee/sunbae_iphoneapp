@@ -26,8 +26,11 @@
 		04813F09285338880083DDF1 /* CardInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F07285338880083DDF1 /* CardInfoData.swift */; };
 		04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
 		04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
+		CAC2248E28843341008BA509 /* DutchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2248D28843341008BA509 /* DutchData.swift */; };
 		CAE4D56F287DC0BF00118284 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = CAE4D56E287DC0BF00118284 /* SimpleToast */; };
 		CAE4D572287DCC1200118284 /* CommonOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D571287DCC1200118284 /* CommonOption.swift */; };
+		CAE4D5742881A56400118284 /* DutchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D5732881A56400118284 /* DutchView.swift */; };
+		CAE4D5762881BE4200118284 /* newDuctModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D5752881BE4200118284 /* newDuctModel.swift */; };
 		CAEC96CF28577C75002CBDF5 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* AssetsView.swift */; };
 		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
 		CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */; };
@@ -84,7 +87,10 @@
 		04813F07285338880083DDF1 /* CardInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoData.swift; sourceTree = "<group>"; };
 		04A599E52859E1E700C64D18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		04C14A5D286EB3550090CD5C /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
+		CAC2248D28843341008BA509 /* DutchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutchData.swift; sourceTree = "<group>"; };
 		CAE4D571287DCC1200118284 /* CommonOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonOption.swift; sourceTree = "<group>"; };
+		CAE4D5732881A56400118284 /* DutchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutchView.swift; sourceTree = "<group>"; };
+		CAE4D5752881BE4200118284 /* newDuctModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDuctModel.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -207,6 +213,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CAC2248C2884331F008BA509 /* DutchData */ = {
+			isa = PBXGroup;
+			children = (
+				CAC2248D28843341008BA509 /* DutchData.swift */,
+			);
+			path = DutchData;
+			sourceTree = "<group>";
+		};
 		CAE4D570287DCBFD00118284 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +243,7 @@
 		CAEC96F2287AC6AB002CBDF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CAC2248C2884331F008BA509 /* DutchData */,
 				CAE4D570287DCBFD00118284 /* Common */,
 				CAEC96FD287DA85B002CBDF5 /* CustomView */,
 				CAEC96F3287AC978002CBDF5 /* PayCardFunctions.swift */,
@@ -274,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				CAEC96FB287D9AF7002CBDF5 /* DutchPayView.swift */,
+				CAE4D5732881A56400118284 /* DutchView.swift */,
 			);
 			path = DutchPay;
 			sourceTree = "<group>";
@@ -282,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				CAEC96FE287DA89C002CBDF5 /* CustomTextViewModel.swift */,
+				CAE4D5752881BE4200118284 /* newDuctModel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -468,12 +485,15 @@
 				CAE4D572287DCC1200118284 /* CommonOption.swift in Sources */,
 				04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
+				CAE4D5762881BE4200118284 /* newDuctModel.swift in Sources */,
 				CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */,
+				CAE4D5742881A56400118284 /* DutchView.swift in Sources */,
 				CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
 				0415E6572861780C004A8D05 /* SplashView.swift in Sources */,
 				CAEC9701287DADBA002CBDF5 /* DutchPayFunc.swift in Sources */,
 				CAEC96FF287DA89C002CBDF5 /* CustomTextViewModel.swift in Sources */,
 				0466865F286C0D1600FE573B /* FixedPayAreaView.swift in Sources */,
+				CAC2248E28843341008BA509 /* DutchData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

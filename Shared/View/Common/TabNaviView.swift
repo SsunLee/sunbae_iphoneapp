@@ -14,6 +14,7 @@ struct TabNaviView: View {
     @State private var searchText = ""
     
     
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -35,7 +36,13 @@ struct TabNaviView: View {
                         DutchPayView(text: $searchText )
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
-                                Text("정산")
+                                Text("정산(beta1)")
+                                    .font(.subheadline.bold())
+                            }
+                        DutchView()
+                            .tabItem {
+                                Image(systemName: "circle.grid.cross")
+                                Text("정산(beta2)")
                                     .font(.subheadline.bold())
                             }
                         MyInfoView()
