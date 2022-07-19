@@ -39,7 +39,7 @@ struct TabNaviView: View {
                                 Text("정산(beta1)")
                                     .font(.subheadline.bold())
                             }
-                        DutchView()
+                        DutchView(text: $searchText)
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
                                 Text("정산(beta2)")

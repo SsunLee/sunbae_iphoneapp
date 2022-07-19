@@ -9,7 +9,19 @@ import SwiftUI
 
 struct DutchView: View {
     @ObservedObject var sun =  DutchInfo()
+    @FocusState private var focusedField: Field?
+    @State var payResult: String = ""
     
+    @State private var inputHeight: CGFloat = 200
+    @State private var isFocused: Bool = false
+    @Binding var text: String
+    
+    init(text: Binding<String>) {
+        self._text = text
+    }
+    enum Field: Hashable {
+        case priceField, memberField, txtField
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -115,52 +127,39 @@ struct DutchView: View {
                     // actions
 //                    text = getCalData()
 //                    focusedField = nil
-
+                    text = sun.getDutchInfo()
                 }, label: {
                         Text("정산하기")
                             .frame(width: geo.size.width, height: 50)
-                            .background(btnColor)
+                            .background(sun.btnColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(15)
-                }).disabled(isDisabled()) // 추후 여기에 변수 넣을 예정
+                }).disabled(sun.isDisabled()) // 추후 여기에 변수 넣을 예정
+                Spacer()
+                Divider()
+                VStack {
+                    Divider()
+                    UITextViewRepresentable(text: $text, isFocused: $isFocused, inputHeight: $inputHeight)
+                      .frame(height: inputHeight)
+                      .padding(.vertical, 10)
+                      .focused($focusedField, equals: .txtField)
+                      .disabled(sun.isDisabled())
+                }
+                .border(isFocused ? Color.accentColor : Color.gray, width: 1)
             } // scrollview
         } // geometry
         .padding()
 
     } // body
     
-    func isDisabled() -> Bool {
-        var tempVal_one: Int = 0
-        var tempVal_two: Int = 0
-
-        for eleOne in sun.dutchdatas {
-            if (eleOne.price.isEmpty) {
-                tempVal_one += 1
-            }
-            for eleTwo in eleOne.members {
-                if (eleTwo.isEmpty) {
-                    tempVal_two += 1
-                }
-            }
-        }
-        
-        let isCountZero = sun.dutchdatas.count == 0 ? true : false
-        let isValueIsEmptry = (tempVal_one + tempVal_two) > 0 ? true : false
-        
-        return isCountZero || isValueIsEmptry
-    }
-    var btnColor: Color {
-        return isDisabled() ? .gray : .accentColor
-    }
-    
     
     
 } // end
 
 
-struct DutchView_Previews: PreviewProvider {
-    static var previews: some View {
-        DutchView()
-
-    }
-}
+//struct DutchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DutchView()
+//
+//    }
+//}

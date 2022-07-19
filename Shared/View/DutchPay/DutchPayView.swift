@@ -56,7 +56,7 @@ struct DutchPayView: View {
                                 .keyboardType(.numberPad)
                                 .submitLabel(.next)
                                 .focused($focusedField, equals: .priceField)
-                            TextField("멤버 ex) 이순배, 최보미", text: $member)
+                            TextField("멤버 ex) 이순배, 홍길동", text: $member)
                                 .padding()
                                 .background(Color(uiColor: .secondarySystemBackground))
                                 .font(.subheadline)
