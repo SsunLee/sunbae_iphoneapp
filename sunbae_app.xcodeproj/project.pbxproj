@@ -27,6 +27,7 @@
 		04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A599E52859E1E700C64D18 /* EmptyListView.swift */; };
 		04C14A5E286EB3550090CD5C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C14A5D286EB3550090CD5C /* WalletDetailView.swift */; };
 		CAC2248E28843341008BA509 /* DutchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2248D28843341008BA509 /* DutchData.swift */; };
+		CAC2249128884FEE008BA509 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = CAC2249028884FEE008BA509 /* SPIndicator */; };
 		CAE4D56F287DC0BF00118284 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = CAE4D56E287DC0BF00118284 /* SimpleToast */; };
 		CAE4D572287DCC1200118284 /* CommonOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D571287DCC1200118284 /* CommonOption.swift */; };
 		CAE4D5742881A56400118284 /* DutchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D5732881A56400118284 /* DutchView.swift */; };
@@ -75,7 +76,7 @@
 		04813EC8285330FE0083DDF1 /* sunbae_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunbae_appApp.swift; sourceTree = "<group>"; };
 		04813EC9285330FE0083DDF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04813ECA285331090083DDF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04813ECF285331090083DDF1 /* sunbae_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunbae_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04813ECF285331090083DDF1 /* 쑨페이.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "쑨페이.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04813ED5285331090083DDF1 /* sunbae_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunbae_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04813ED7285331090083DDF1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		04813EDC285331090083DDF1 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE4D56F287DC0BF00118284 /* SimpleToast in Frameworks */,
+				CAC2249128884FEE008BA509 /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +169,7 @@
 		04813ED0285331090083DDF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04813ECF285331090083DDF1 /* sunbae_app.app */,
+				04813ECF285331090083DDF1 /* 쑨페이.app */,
 				04813ED5285331090083DDF1 /* sunbae_app.app */,
 				04813EDC285331090083DDF1 /* Tests iOS.xctest */,
 				04813EE8285331090083DDF1 /* Tests macOS.xctest */,
@@ -321,9 +323,10 @@
 			name = "sunbae_app (iOS)";
 			packageProductDependencies = (
 				CAE4D56E287DC0BF00118284 /* SimpleToast */,
+				CAC2249028884FEE008BA509 /* SPIndicator */,
 			);
 			productName = "sunbae_app (iOS)";
-			productReference = 04813ECF285331090083DDF1 /* sunbae_app.app */;
+			productReference = 04813ECF285331090083DDF1 /* 쑨페이.app */;
 			productType = "com.apple.product-type.application";
 		};
 		04813ED4285331090083DDF1 /* sunbae_app (macOS) */ = {
@@ -416,6 +419,7 @@
 			mainGroup = 04813EC2285330FE0083DDF1;
 			packageReferences = (
 				CAE4D56D287DC0BF00118284 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+				CAC2248F28884FEE008BA509 /* XCRemoteSwiftPackageReference "SPIndicator" */,
 			);
 			productRefGroup = 04813ED0285331090083DDF1 /* Products */;
 			projectDirPath = "";
@@ -660,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = T65P9D58JD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -674,9 +678,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "sun.sunbae-app";
-				PRODUCT_NAME = sunbae_app;
+				PRODUCT_NAME = "쑨페이";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -690,7 +694,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = T65P9D58JD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -704,9 +708,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "sun.sunbae-app";
-				PRODUCT_NAME = sunbae_app;
+				PRODUCT_NAME = "쑨페이";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -893,6 +897,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CAC2248F28884FEE008BA509 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		CAE4D56D287DC0BF00118284 /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sanzaru/SimpleToast";
@@ -904,6 +916,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CAC2249028884FEE008BA509 /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAC2248F28884FEE008BA509 /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
+		};
 		CAE4D56E287DC0BF00118284 /* SimpleToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CAE4D56D287DC0BF00118284 /* XCRemoteSwiftPackageReference "SimpleToast" */;

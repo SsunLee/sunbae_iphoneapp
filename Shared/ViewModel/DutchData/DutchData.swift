@@ -62,39 +62,58 @@ class DutchInfo: ObservableObject {
     var btnColor: Color {
         return isDisabled() ? .gray : .accentColor
     }
-    
+
     func getDutchInfo() -> String {
-        var memString: String = ""
         var calArray: [TempArray] = []
-        var tempInt: Int = 0
-        var i: Int = 0
+        var memString: String = ""
         var tempString: String = ""
+        
+        var i: Int = 0
+        var tempInt: Int = 0
+        var memCnt: Int = 0
+        var totCal: Int = 0
         
         for eleOne in dutchdatas {
             i += 1
+            memCnt = eleOne.members.count
             for eleTwo in eleOne.members {
                 if let _price = Int(eleOne.price) {
-                    tempInt = _price / eleTwo.count
+                    tempInt = _price / memCnt
                     calArray.append(TempArray(price: tempInt, member: eleTwo))
-                    print("인원 수 : \(eleTwo.count)")
                 }
             }
             memString = eleOne.members.joined(separator: ", ")
             tempString += "\(String(i))차 정산(\(memString)) \n - 총 : \(setNumberFormatter(strPrice: String(eleOne.price))) \n "
         }
-        let arrayClean = calArray.uniqueValues(value: {$0.member})
-        tempString += "\n---------------\n"
+        
+        let arrayClean = getGoupArray(inputArr: calArray)
+        
+        tempString += "\n 😎 정산 정보 😎 \n"
         for mem in arrayClean {
             tempString += "- \(mem.member) : \(setNumberFormatter(strPrice: String(mem.price))) \n"
+            totCal += mem.price
         }
-        var totCal: Int = 0
-        for tot in arrayClean {
-            totCal += tot.price
-        }
-        tempString += "총합 : \(setNumberFormatter(strPrice: String(totCal)))"
+        tempString += "총합 : \(setNumberFormatter(strPrice: String(totCal))) \n"
         
         return tempString
     }
+    
+    func getGoupArray(inputArr: [TempArray] ) -> [TempArray] {
+        var outArr: [TempArray] = []
+        let dict = Dictionary(grouping: inputArr) { $0.member }
+
+        let dict2 = dict.mapValues { (arr:[TempArray]) -> TempArray in
+            let sum = arr.reduce(0) {
+                $0 + $1.price
+            }
+            return TempArray(price: sum, member: arr[0].member)
+        }
+        
+        outArr = dict2.values.sorted { ($0.price) > ($1.price) }
+        
+        return outArr
+    }
+    
     
     func setNumberFormatter(strPrice: String) -> String{
         let numberFormatter = NumberFormatter()
@@ -106,8 +125,12 @@ class DutchInfo: ObservableObject {
     }
     
 }
+
+
+
 extension Array
 {
+    
    func uniqueValues<V:Equatable>( value:(Element)->V) -> [Element]
    {
       var result:[Element] = []

@@ -12,7 +12,7 @@ struct LogoView: View {
     
     var body: some View {
         HStack {
-            Text("Sun".uppercased())
+            Text("Ssun".uppercased())
                 .font(.title3)
                 .fontWeight(.black)
                 .foregroundColor(LogoColor)
@@ -21,7 +21,7 @@ struct LogoView: View {
                 .scaledToFit()
                 .frame(width: 30, height: 30, alignment: .center)
             
-            Text("Bae".uppercased())
+            Text("Pay".uppercased())
                 .font(.title3)
                 .fontWeight(.black)
                 .foregroundColor(LogoColor)

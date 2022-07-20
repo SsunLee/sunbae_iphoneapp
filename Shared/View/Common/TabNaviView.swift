@@ -12,7 +12,7 @@ struct TabNaviView: View {
     @State var myInfo: String = "내 정보"
     var isBarHidden: Bool = false
     @State private var searchText = ""
-    
+    @State private var fillText = ""
     
     
     var body: some View {
@@ -36,13 +36,13 @@ struct TabNaviView: View {
                         DutchPayView(text: $searchText )
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
-                                Text("정산(beta1)")
+                                Text("더치페이(단건)")
                                     .font(.subheadline.bold())
                             }
-                        DutchView(text: $searchText)
+                        DutchView(text: $fillText)
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
-                                Text("정산(beta2)")
+                                Text("더치페이(여러개)")
                                     .font(.subheadline.bold())
                             }
                         MyInfoView()

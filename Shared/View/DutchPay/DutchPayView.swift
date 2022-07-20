@@ -10,13 +10,13 @@ import SimpleToast
 
 struct DutchPayView: View {
     @State private var showToast = false
-    private let toastOptions = SimpleToastOptions(
-        alignment: .bottom,
-        hideAfter: 3,
-        backdropColor: Color.blue.opacity(0.5),
-        animation: .default,
-        modifierType: .scale
-    )
+//    private let toastOptions = SimpleToastOptions(
+//        alignment: .bottom,
+//        hideAfter: 3,
+//        backdropColor: Color.blue.opacity(0.5),
+//        animation: .default,
+//        modifierType: .scale
+//    )
     
     @State var price: String = ""
     @State var member: String = ""
@@ -67,7 +67,6 @@ struct DutchPayView: View {
                                 // actions
                                 text = getCalData()
                                 focusedField = nil
-
                             }, label: {
                                     Text("정산하기")
                                         .frame(width: geo.size.width, height: 50)
@@ -113,17 +112,25 @@ struct DutchPayView: View {
                     .border(isFocused ? Color.accentColor : Color.gray, width: 1)
                         
                 } // vstack
-                .simpleToast(isPresented: $showToast, options: toastOptions){
-                    HStack {
-                        Image(systemName: "checkmark.circle")
-                        Text("복사 되었습니다.")
-                            .font(.subheadline)
-                    }
-                    .padding(5)
-                    .cornerRadius(16)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                }
+                .SPIndicator(
+                    isPresent: $showToast,
+                    title: "Notification",
+                    message: "복사되었습니다",
+                    duration: 2,
+                    preset: .done,
+                    haptic: .success
+                )
+//                .simpleToast(isPresented: $showToast, options: toastOptions){
+//                    HStack {
+//                        Image(systemName: "checkmark.circle")
+//                        Text("복사 되었습니다.")
+//                            .font(.subheadline)
+//                    }
+//                    .padding(5)
+//                    .cornerRadius(16)
+//                    .foregroundColor(.white)
+//                    .background(Color.blue)
+//                }
             } // scrollview
 
         } // geo
