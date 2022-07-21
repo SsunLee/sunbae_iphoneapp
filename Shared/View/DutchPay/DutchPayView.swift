@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SimpleToast
 
 struct DutchPayView: View {
     @State private var showToast = false

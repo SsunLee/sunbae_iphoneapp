@@ -14,6 +14,7 @@ struct TabNaviView: View {
     @State private var searchText = ""
     @State private var fillText = ""
     
+
     
     var body: some View {
         NavigationView {
@@ -55,7 +56,8 @@ struct TabNaviView: View {
                 } // Vstack
             } // Zstack
             .ignoresSafeArea(.all, edges: .top)
-        }
+        } // navi
+        .navigationViewStyle(StackNavigationViewStyle())
         //.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
 
     } // Body View
