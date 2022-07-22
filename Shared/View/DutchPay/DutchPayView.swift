@@ -9,17 +9,10 @@ import SwiftUI
 
 struct DutchPayView: View {
     @State private var showToast = false
-//    private let toastOptions = SimpleToastOptions(
-//        alignment: .bottom,
-//        hideAfter: 3,
-//        backdropColor: Color.blue.opacity(0.5),
-//        animation: .default,
-//        modifierType: .scale
-//    )
-    
+//    @State var price: Binding<String>? = nil
+//    @State var member: Binding<String>? = nil
     @State var price: String = ""
     @State var member: String = ""
-    
     var payfunc = AddItemFunc(card: CardData())
     
     
@@ -29,6 +22,7 @@ struct DutchPayView: View {
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
     @Binding var text: String
+    @State var shareText: String = ""
     
     init(text: Binding<String>) {
         self._text = text
@@ -55,12 +49,14 @@ struct DutchPayView: View {
                                 .keyboardType(.numberPad)
                                 .submitLabel(.next)
                                 .focused($focusedField, equals: .priceField)
+                            
                             TextField("멤버 ex) 이순배, 홍길동", text: $member)
                                 .padding()
                                 .background(Color(uiColor: .secondarySystemBackground))
                                 .font(.subheadline)
                                 .cornerRadius(15)
                                 .focused($focusedField, equals: .memberField)
+
                             Spacer()
                             Button(action: {
                                 // actions

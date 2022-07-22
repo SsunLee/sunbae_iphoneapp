@@ -11,8 +11,8 @@ struct TabNaviView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var myInfo: String = "내 정보"
     var isBarHidden: Bool = false
-    @State private var searchText = ""
-    @State private var fillText = ""
+    @State private var searchText: String = ""
+    @State private var fillText : String = ""
     
 
     

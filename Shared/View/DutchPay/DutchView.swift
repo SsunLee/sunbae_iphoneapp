@@ -7,6 +7,8 @@
 
 import SwiftUI
 import SPIndicator
+import UIKit
+
 
 struct DutchView: View {
     @ObservedObject var sun =  DutchInfo()
@@ -156,7 +158,6 @@ struct DutchView: View {
                                 if !text.isEmpty {
                                     UIPasteboard.general.string = text
                                     showToast.toggle()
-                                    print("찍히는지 : \(text)")
                                 }
 
                             }, label: {
@@ -164,6 +165,14 @@ struct DutchView: View {
                                     .font(.subheadline)
                                     .foregroundColor(.accentColor)
                                     .padding()
+                            })
+                            
+                            Button(action: {
+                                // here~~~
+                            }, label: {
+                                Text("공유하기")
+                                    .font(.subheadline)
+                                
                             })
                         }
                     }
@@ -175,6 +184,7 @@ struct DutchView: View {
                         preset: .done,
                         haptic: .success
                     )
+                    
                     VStack {
                         Divider()
                         UITextViewRepresentable(text: $text, isFocused: $isFocused, inputHeight: $inputHeight)
@@ -192,10 +202,24 @@ struct DutchView: View {
 
     } // body
     
-    
-    
 } // end
 
+// 1. Activity View
+struct ActivityView: UIViewControllerRepresentable {
+    let text: String
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
+        return UIActivityViewController(activityItems: [text], applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
+}
+
+// 2. Share Text
+struct ShareText: Identifiable {
+    let id = UUID()
+    let text: String
+}
 
 //struct DutchView_Previews: PreviewProvider {
 //    static var previews: some View {
