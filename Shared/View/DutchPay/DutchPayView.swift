@@ -6,24 +6,22 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct DutchPayView: View {
-    @State private var showToast = false
-//    @State var price: Binding<String>? = nil
-//    @State var member: Binding<String>? = nil
+    var payfunc = AddItemFunc(card: CardData())
+    @ObservedObject var sun =  DutchInfo()
     @State var price: String = ""
     @State var member: String = ""
-    var payfunc = AddItemFunc(card: CardData())
-    
-    
-    @FocusState private var focusedField: Field?
+    @State var outString: String = ""
+    @State var shareText: ShareText?
     @State var payResult: String = ""
-    
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
+    @State private var showToast = false
+    @FocusState private var focusedField: Field?
     @Binding var text: String
-    @State var shareText: String = ""
-    
+
     init(text: Binding<String>) {
         self._text = text
     }
@@ -38,7 +36,6 @@ struct DutchPayView: View {
                         Text("N빵 계산기 🤩")
                             .font(.title3.bold())
                             .foregroundColor(.accentColor)
-                            
                         Divider()
                         Group {
                             TextField("정산 금액", text: $price)
@@ -49,14 +46,12 @@ struct DutchPayView: View {
                                 .keyboardType(.numberPad)
                                 .submitLabel(.next)
                                 .focused($focusedField, equals: .priceField)
-                            
                             TextField("멤버 ex) 이순배, 홍길동", text: $member)
                                 .padding()
                                 .background(Color(uiColor: .secondarySystemBackground))
                                 .font(.subheadline)
                                 .cornerRadius(15)
                                 .focused($focusedField, equals: .memberField)
-
                             Spacer()
                             Button(action: {
                                 // actions
@@ -69,7 +64,6 @@ struct DutchPayView: View {
                                         .foregroundColor(Color.white)
                                         .cornerRadius(15)
                             }).disabled(isDisable)
-                                
                     } // group
                     Spacer()
                     
@@ -87,14 +81,23 @@ struct DutchPayView: View {
                                     showToast.toggle()
                                     print("찍히는지 : \(text)")
                                 }
-
                             }, label: {
                                 Text("Copy")
                                     .font(.subheadline)
                                     .foregroundColor(.accentColor)
                                     .padding()
                             })
+                            Button(action: {
+                                outString = text
+                                shareText = ShareText(text: outString)
+                            }, label: {
+                                Text("공유하기")
+                                    .font(.subheadline)
+                            })
                         }
+                    }
+                    .sheet(item: $shareText) { shareText in
+                        ActivityView(text: shareText.text)
                     }
                     VStack {
                         Divider()

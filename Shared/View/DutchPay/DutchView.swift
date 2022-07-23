@@ -18,7 +18,9 @@ struct DutchView: View {
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
     @Binding var text: String
-    
+    @State var outString: String = ""
+    @State var shareText: ShareText?
+
     init(text: Binding<String>) {
         self._text = text
     }
@@ -53,7 +55,6 @@ struct DutchView: View {
                         }
                         .padding(5)
                         Divider()
-                        // sun.dutchdatas
                         if (sun.dutchdatas.count == 0) {
                             Spacer()
                             VStack {
@@ -68,8 +69,7 @@ struct DutchView: View {
                             }
                             .frame(alignment: .bottom)
                         }
-                    } // vstac
-
+                    } // vstack
                     ForEach(sun.dutchdatas.indices, id:\.self) { index in
                         VStack (alignment: .leading, spacing: 5) {
                             HStack {
@@ -86,7 +86,6 @@ struct DutchView: View {
                                     .foregroundColor(.accentColor)
                                 Spacer()
                             } // hstack
-
                             TextField("정산 금액", text: $sun.dutchdatas[index].price)
                                 .padding(8)
                                 .background(Color(uiColor: .secondarySystemBackground))
@@ -95,7 +94,6 @@ struct DutchView: View {
                                 .keyboardType(.numberPad)
                                 .submitLabel(.next)
                                 .focused($focusedField, equals: .priceField)
-                            
                             ForEach(0..<sun.dutchdatas[index].members.count, id:\.self) { m_index in
                                     HStack {
                                         Button(action: {
@@ -106,7 +104,6 @@ struct DutchView: View {
                                                 .padding(.horizontal)
                                         })
                                         Spacer()
-                                        
                                         TextField("정산 멤버", text:$sun.dutchdatas[index].members[m_index])
                                             .padding(8)
                                             .background(Color(uiColor: .secondarySystemBackground))
@@ -116,7 +113,6 @@ struct DutchView: View {
                                             .focused($focusedField, equals: .memberField)
                                     } // hstack
                                 } // foreach 1
-                            // 여기까지
                                 HStack {
                                     Button(action: {
                                         sun.addMember(indexArray: index, member: "")
@@ -129,14 +125,11 @@ struct DutchView: View {
                                         .font(.subheadline)
                                         .padding()
                                     Spacer()
-
                                 } // hstack
                             Divider()
                         } // vstack
-                        
                     }
                     Button(action: {
-                        // actions
                         focusedField = nil
                         text = sun.getDutchInfo()
                     }, label: {
@@ -159,22 +152,23 @@ struct DutchView: View {
                                     UIPasteboard.general.string = text
                                     showToast.toggle()
                                 }
-
                             }, label: {
                                 Text("Copy")
                                     .font(.subheadline)
                                     .foregroundColor(.accentColor)
                                     .padding()
                             })
-                            
                             Button(action: {
-                                // here~~~
+                                outString = sun.getDutchInfo()
+                                shareText = ShareText(text: outString)
                             }, label: {
                                 Text("공유하기")
                                     .font(.subheadline)
-                                
                             })
                         }
+                    }
+                    .sheet(item: $shareText) { shareText in
+                        ActivityView(text: shareText.text)
                     }
                     .SPIndicator(
                         isPresent: $showToast,
@@ -184,7 +178,6 @@ struct DutchView: View {
                         preset: .done,
                         haptic: .success
                     )
-                    
                     VStack {
                         Divider()
                         UITextViewRepresentable(text: $text, isFocused: $isFocused, inputHeight: $inputHeight)
@@ -196,12 +189,9 @@ struct DutchView: View {
                     .border(isFocused ? Color.accentColor : Color.gray, width: 1)
                 }
             } // scrollview
-            
         } // geometry
         .padding()
-
     } // body
-    
 } // end
 
 // 1. Activity View
