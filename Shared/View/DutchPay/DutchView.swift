@@ -21,6 +21,8 @@ struct DutchView: View {
     @State var outString: String = ""
     @State var shareText: ShareText?
 
+    @State var showShare: Bool = false
+    
     init(text: Binding<String>) {
         self._text = text
     }
@@ -161,14 +163,15 @@ struct DutchView: View {
                             Button(action: {
                                 outString = sun.getDutchInfo()
                                 shareText = ShareText(text: outString)
+                                showShare = sun.isDisabled() ? false : true
                             }, label: {
                                 Text("공유하기")
                                     .font(.subheadline)
                             })
                         }
                     }
-                    .sheet(item: $shareText) { shareText in
-                        ActivityView(text: shareText.text)
+                    .sheet(isPresented: $showShare) {
+                        ActivityView(text: outString)
                     }
                     .SPIndicator(
                         isPresent: $showToast,
