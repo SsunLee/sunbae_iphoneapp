@@ -45,10 +45,10 @@ struct AddItemView: View {
                                     //
                                 }, label: {
                                     Text(selectedTypeIndex.rawValue)
-                                        .font(.title3.bold())
+                                        .font(.subheadline.bold())
                                 })
-                                .frame(width: 100, height: 7, alignment: .center)
-                                .padding()
+                                .frame(width: 60, height: 15, alignment: .center)
+                                .padding(5)
                                 .accentColor(.white)
                                 .background(isTypeColor)
                                 .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
@@ -132,5 +132,6 @@ struct AddItemView: View {
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
         AddItemView()
+            .environmentObject(CardData())
     }
 }

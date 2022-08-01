@@ -11,9 +11,9 @@ import SwiftUI
 struct sunbae_appApp: App {
     
     @StateObject var csManager = ColorSchemeManager()
-
     
     var body: some Scene {
+        
         WindowGroup {
             SplashView()
                 .environmentObject(csManager)
@@ -21,6 +21,7 @@ struct sunbae_appApp: App {
                 .onAppear {
                     UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
                     csManager.applyColorScheme()
+                    
             }
         }
     }

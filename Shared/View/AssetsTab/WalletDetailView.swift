@@ -29,10 +29,8 @@ struct WalletDetailView: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("X")
-                            .font(.subheadline)
+                        Image("chevron.backward")
                             .padding()
-                            .font(.subheadline)
                     })
                     HStack {
                         Text("\(card.payType) 상세 내역")
@@ -47,7 +45,7 @@ struct WalletDetailView: View {
                             Text("삭제")
                         }).padding()
                     } // Hstack
-                    Spacer()
+                    
                     HStack {
                         Text(TextText)
                             .font(.subheadline.bold())
@@ -64,10 +62,10 @@ struct WalletDetailView: View {
                                 
                             }, label: {
                                 Text(selectedTypeIndex.rawValue)
-                                    .font(.title3.bold())
+                                    .font(.subheadline.bold())
                             })
-                            .frame(width: 100, height: 7, alignment: .center)
-                            .padding()
+                            .frame(width: 60, height: 15, alignment: .center)
+                            .padding(5)
                             .accentColor(.white)
                             .background(isTypeColor)
                             .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))

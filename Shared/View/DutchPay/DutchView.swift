@@ -145,10 +145,16 @@ struct DutchView: View {
                     Divider()
                     VStack {
                         HStack {
-                            Text("Result")
+                            Text("🥰 Result")
                                 .font(.subheadline)
-                            .foregroundColor(Color.accentColor)
                             Spacer()
+                            Button(action: {
+                                text = ""
+                            }, label: {
+                                Text("Clear")
+                                    .font(.subheadline)
+                                    .padding()
+                            })
                             Button(action: {
                                 if !text.isEmpty {
                                     UIPasteboard.general.string = text
@@ -168,6 +174,8 @@ struct DutchView: View {
                                 Text("공유하기")
                                     .font(.subheadline)
                             })
+
+                            
                         }
                     }
                     .sheet(isPresented: $showShare) {

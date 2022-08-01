@@ -33,9 +33,8 @@ struct DutchPayView: View {
         GeometryReader { geo in
                 ScrollView {
                     VStack (alignment: .leading, spacing: 10){
-                        Text("N빵 계산기 🤩")
-                            .font(.title3.bold())
-                            .foregroundColor(.accentColor)
+                        Text("😍 더치페이 계산기")
+                            .font(.subheadline.bold())
                         Divider()
                         Group {
                             TextField("정산 금액", text: $price)
@@ -71,7 +70,7 @@ struct DutchPayView: View {
                         
                     VStack {
                         HStack {
-                            Text("Result")
+                            Text("🥰 Result")
                                 .font(.subheadline)
                             .foregroundColor(Color.accentColor)
                             Spacer()
