@@ -124,6 +124,7 @@ class DutchInfo: ObservableObject {
         return result
     }
     
+    
 }
 
 

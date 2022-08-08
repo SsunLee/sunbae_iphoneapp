@@ -225,10 +225,10 @@ struct ShareText: Identifiable {
     let text: String
 }
 
-//struct DutchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DutchView()
-//            .environmentObject(CardData())
-//
-//    }
-//}
+struct DutchView_Previews: PreviewProvider {
+    static var previews: some View {
+        DutchView()
+            .environmentObject(CardData())
+
+    }
+}

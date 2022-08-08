@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0408CADF28A0C19D000474E8 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 0408CADE28A0C19D000474E8 /* GoogleMobileAds */; };
+		0408CAE228A0D3DB000474E8 /* GADBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408CAE128A0D3DB000474E8 /* GADBannerView.swift */; };
+		0408CAE328A0D3DB000474E8 /* GADBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408CAE128A0D3DB000474E8 /* GADBannerView.swift */; };
 		0415E651286163B8004A8D05 /* TabNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E650286163B8004A8D05 /* TabNaviView.swift */; };
 		0415E6542861758B004A8D05 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6532861758B004A8D05 /* MyInfoView.swift */; };
 		0415E6572861780C004A8D05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E6562861780C004A8D05 /* SplashView.swift */; };
@@ -69,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0408CAE028A0CB61000474E8 /* sunbae-app--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "sunbae-app--iOS--Info.plist"; sourceTree = "<group>"; };
+		0408CAE128A0D3DB000474E8 /* GADBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerView.swift; sourceTree = "<group>"; };
 		0415E650286163B8004A8D05 /* TabNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNaviView.swift; sourceTree = "<group>"; };
 		0415E6532861758B004A8D05 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		0415E6562861780C004A8D05 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0408CADF28A0C19D000474E8 /* GoogleMobileAds in Frameworks */,
 				04F854E7288E972500FA0434 /* CloudKit.framework in Frameworks */,
 				04F854E028893B8100FA0434 /* SPIndicator in Frameworks */,
 			);
@@ -148,6 +154,7 @@
 		04813EC2285330FE0083DDF1 = {
 			isa = PBXGroup;
 			children = (
+				0408CAE028A0CB61000474E8 /* sunbae-app--iOS--Info.plist */,
 				04F854E8288E983000FA0434 /* sunbae_app (iOS).entitlements */,
 				04F854E4288E955400FA0434 /* sunbae_app (iOS)Release.entitlements */,
 				04813EC7285330FE0083DDF1 /* Shared */,
@@ -288,6 +295,7 @@
 				CAEC96E6286977E1002CBDF5 /* LogoView.swift */,
 				CAEC96E328697437002CBDF5 /* TopNaviView.swift */,
 				0415E650286163B8004A8D05 /* TabNaviView.swift */,
+				0408CAE128A0D3DB000474E8 /* GADBannerView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 			name = "sunbae_app (iOS)";
 			packageProductDependencies = (
 				04F854DF28893B8100FA0434 /* SPIndicator */,
+				0408CADE28A0C19D000474E8 /* GoogleMobileAds */,
 			);
 			productName = "sunbae_app (iOS)";
 			productReference = 04813ECF285331090083DDF1 /* SSUN&PAY.app */;
@@ -432,6 +441,7 @@
 			mainGroup = 04813EC2285330FE0083DDF1;
 			packageReferences = (
 				04F854DE28893B8100FA0434 /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				0408CADD28A0C19D000474E8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 04813ED0285331090083DDF1 /* Products */;
 			projectDirPath = "";
@@ -502,6 +512,7 @@
 				04A599E62859E1E700C64D18 /* EmptyListView.swift in Sources */,
 				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
 				CAE4D5762881BE4200118284 /* newDuctModel.swift in Sources */,
+				0408CAE228A0D3DB000474E8 /* GADBannerView.swift in Sources */,
 				CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				CAE4D5742881A56400118284 /* DutchView.swift in Sources */,
 				CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
@@ -520,6 +531,7 @@
 				CAEC96DC286780CE002CBDF5 /* ThemeSetting.swift in Sources */,
 				04813EF3285331090083DDF1 /* ContentView.swift in Sources */,
 				04813F09285338880083DDF1 /* CardInfoData.swift in Sources */,
+				0408CAE328A0D3DB000474E8 /* GADBannerView.swift in Sources */,
 				04813EF1285331090083DDF1 /* sunbae_appApp.swift in Sources */,
 				CAEC96E228678B65002CBDF5 /* NavigationBarModifier.swift in Sources */,
 				CAEC96D928674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
@@ -681,6 +693,7 @@
 				DEVELOPMENT_TEAM = T65P9D58JD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sunbae-app--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -692,6 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.5;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "sun.sunbae-app";
 				PRODUCT_NAME = "SSUN&PAY";
 				SDKROOT = iphoneos;
@@ -712,6 +726,7 @@
 				DEVELOPMENT_TEAM = T65P9D58JD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sunbae-app--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -723,6 +738,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.5;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "sun.sunbae-app";
 				PRODUCT_NAME = "SSUN&PAY";
 				SDKROOT = iphoneos;
@@ -911,6 +927,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0408CADD28A0C19D000474E8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		04F854DE28893B8100FA0434 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
@@ -922,6 +946,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0408CADE28A0C19D000474E8 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0408CADD28A0C19D000474E8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		04F854DF28893B8100FA0434 /* SPIndicator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04F854DE28893B8100FA0434 /* XCRemoteSwiftPackageReference "SPIndicator" */;

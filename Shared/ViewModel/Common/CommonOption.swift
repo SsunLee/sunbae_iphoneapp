@@ -19,4 +19,13 @@ extension commonOption {
         return colorScheme == .dark ? .black : .white
     }
     
+    var version: String? {
+        guard let dictionary = Bundle.main.infoDictionary,
+              let version = dictionary["CFBundleShortVersionString"] as? String,
+              let build = dictionary["CFBundleVersion"] as? String else {return nil}
+//        let versionAndBuild: String = "version: \(version), build: \(build)"
+        let versionText: String = "version: \(version)"
+        return versionText
+    }
+    
 }

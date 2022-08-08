@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct AssetsView: View {
     
@@ -49,6 +50,7 @@ struct AssetsView: View {
                     Spacer()
                 }
             }
+
         } // Zstack
 
         //

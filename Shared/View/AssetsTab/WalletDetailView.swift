@@ -29,7 +29,7 @@ struct WalletDetailView: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("chevron.backward")
+                        Image(systemName: "chevron.backward")
                             .padding()
                     })
                     HStack {
@@ -174,3 +174,10 @@ struct WalletDetailView: View {
     
 } // struct
 
+//struct WalletDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WalletDetailView()
+//            .environmentObject(CardData())
+//    }
+//
+//}
