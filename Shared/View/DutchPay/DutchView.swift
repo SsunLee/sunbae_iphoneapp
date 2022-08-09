@@ -17,15 +17,18 @@ struct DutchView: View {
     @State private var showToast = false
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
-    @Binding var text: String
+//    @Binding var text: String
     @State var outString: String = ""
     @State var shareText: ShareText?
 
     @State var showShare: Bool = false
     
-    init(text: Binding<String>) {
-        self._text = text
-    }
+    @State var txtText: String = ""
+    
+    
+//    init(text: Binding<String>) {
+//        self._text = text
+//    }
     enum Field: Hashable {
         case priceField, memberField, txtField
     }
@@ -133,7 +136,7 @@ struct DutchView: View {
                     }
                     Button(action: {
                         focusedField = nil
-                        text = sun.getDutchInfo()
+                        txtText = sun.getDutchInfo()
                     }, label: {
                             Text("정산하기")
                                 .frame(width: geo.size.width, height: 50)
@@ -149,15 +152,15 @@ struct DutchView: View {
                                 .font(.subheadline)
                             Spacer()
                             Button(action: {
-                                text = ""
+                                txtText = ""
                             }, label: {
                                 Text("Clear")
                                     .font(.subheadline)
                                     .padding()
                             })
                             Button(action: {
-                                if !text.isEmpty {
-                                    UIPasteboard.general.string = text
+                                if !txtText.isEmpty {
+                                    UIPasteboard.general.string = txtText
                                     showToast.toggle()
                                 }
                             }, label: {
@@ -191,7 +194,7 @@ struct DutchView: View {
                     )
                     VStack {
                         Divider()
-                        UITextViewRepresentable(text: $text, isFocused: $isFocused, inputHeight: $inputHeight)
+                        UITextViewRepresentable(text: $txtText, isFocused: $isFocused, inputHeight: $inputHeight)
                           .frame(height: inputHeight)
                           .padding(.vertical, 10)
                           .focused($focusedField, equals: .txtField)
@@ -222,9 +225,10 @@ struct ShareText: Identifiable {
     let text: String
 }
 
-//struct DutchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DutchView()
-//
-//    }
-//}
+struct DutchView_Previews: PreviewProvider {
+    static var previews: some View {
+        DutchView()
+            .environmentObject(CardData())
+
+    }
+}

@@ -25,9 +25,7 @@ struct AddItemView: View {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
-                            Text("X")
-                                .font(.subheadline)
-                                .padding()
+                            Image(systemName: "chevron.backward")
                         })
                         HStack {
                             Text(TextText)

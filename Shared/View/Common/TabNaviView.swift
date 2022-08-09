@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct TabNaviView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -40,7 +41,7 @@ struct TabNaviView: View {
                                 Text("더치페이(단건)")
                                     .font(.subheadline.bold())
                             }
-                        DutchView(text: $fillText)
+                        DutchView()
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
                                 Text("더치페이(여러개)")
@@ -53,6 +54,13 @@ struct TabNaviView: View {
                                     .font(.subheadline.bold())
                             }
                     }.edgesIgnoringSafeArea(.top)
+                    VStack {
+                        HStack {
+                            Spacer()
+                            GADBannerViewController().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                            Spacer()
+                        }
+                    }
                 } // Vstack
             } // Zstack
             .ignoresSafeArea(.all, edges: .top)
