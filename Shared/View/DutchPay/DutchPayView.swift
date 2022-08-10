@@ -10,21 +10,20 @@ import UIKit
 
 struct DutchPayView: View {
     var payfunc = AddItemFunc(card: CardData())
+    var commonOption: commonOption
     @ObservedObject var sun =  DutchInfo()
     @State var price: String = ""
     @State var member: String = ""
     @State var outString: String = ""
     @State var shareText: ShareText?
     @State var payResult: String = ""
+    @State var showShare: Bool = false
+    @State private var txtText: String = ""
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
     @State private var showToast = false
     @FocusState private var focusedField: Field?
-    @Binding var text: String
 
-    init(text: Binding<String>) {
-        self._text = text
-    }
     enum Field: Hashable {
         case priceField, memberField, txtField
     }
@@ -54,7 +53,7 @@ struct DutchPayView: View {
                             Spacer()
                             Button(action: {
                                 // actions
-                                text = getCalData()
+                                txtText = getCalData()
                                 focusedField = nil
                             }, label: {
                                     Text("정산하기")
@@ -63,76 +62,65 @@ struct DutchPayView: View {
                                         .foregroundColor(Color.white)
                                         .cornerRadius(15)
                             }).disabled(isDisable)
-                    } // group
-                    Spacer()
-                    
-                    Divider()
+                        } // group
+                        Spacer()
                         
-                    VStack {
-                        HStack {
-                            Text("🥰 Result")
-                                .font(.subheadline)
-                            .foregroundColor(Color.accentColor)
-                            Spacer()
-                            Button(action: {
-                                if !text.isEmpty {
-                                    UIPasteboard.general.string = text
-                                    showToast.toggle()
-                                    print("찍히는지 : \(text)")
-                                }
-                            }, label: {
-                                Text("Copy")
-                                    .font(.subheadline)
-                                    .foregroundColor(.accentColor)
-                                    .padding()
-                            })
-                            Button(action: {
-                                outString = text
-                                shareText = ShareText(text: outString)
-                            }, label: {
-                                Text("공유하기")
-                                    .font(.subheadline)
-                            })
-                        }
-                    }
-                    .sheet(item: $shareText) { shareText in
-                        ActivityView(text: shareText.text)
-                    }
-                    VStack {
                         Divider()
-                        UITextViewRepresentable(text: $text, isFocused: $isFocused, inputHeight: $inputHeight)
-                          .frame(height: inputHeight)
-                          .padding(.vertical, 10)
-                          .focused($focusedField, equals: .txtField)
-                          .disabled(isDisable)
-                    }
-                    .border(isFocused ? Color.accentColor : Color.gray, width: 1)
-                        
-                } // vstack
-                .SPIndicator(
-                    isPresent: $showToast,
-                    title: "Notification",
-                    message: "복사되었습니다",
-                    duration: 2,
-                    preset: .done,
-                    haptic: .success
-                )
-//                .simpleToast(isPresented: $showToast, options: toastOptions){
-//                    HStack {
-//                        Image(systemName: "checkmark.circle")
-//                        Text("복사 되었습니다.")
-//                            .font(.subheadline)
-//                    }
-//                    .padding(5)
-//                    .cornerRadius(16)
-//                    .foregroundColor(.white)
-//                    .background(Color.blue)
-//                }
-            } // scrollview
+                            
+                        VStack {
+                            HStack {
+                                Text("🥰 Result")
+                                    .font(.subheadline)
+                                .foregroundColor(Color.accentColor)
+                                Spacer()
+                                Button(action: {
+                                    if !txtText.isEmpty {
+                                        UIPasteboard.general.string = txtText
+                                        showToast.toggle()
+                                        print("찍히는지 : \(txtText)")
+                                    }
+                                }, label: {
+                                    Text("Copy")
+                                        .font(.subheadline)
+                                        .foregroundColor(.accentColor)
+                                        .padding()
+                                })
+                                Button(action: {
+                                    outString = txtText
+                                    shareText = ShareText(text: outString)
+                                    showShare = sun.isDisabled() ? false : true
+                                }, label: {
+                                    Text("공유하기")
+                                        .font(.subheadline)
+                                })
+                            }
+                        }
+                        .sheet(item: $shareText) { shareText in
+                            ActivityView(text: shareText.text)
+                        }
+                        VStack {
+                            Divider()
+                            UITextViewRepresentable(text: $txtText, isFocused: $isFocused, inputHeight: $inputHeight)
+                            .frame(height: inputHeight)
+                            .padding(.vertical, 10)
+                            .focused($focusedField, equals: .txtField)
+                            .disabled(isDisable)
+                        }
+                        .border(isFocused ? Color.accentColor : Color.gray, width: 1)
+                            
+                    } // vstack
+                    .SPIndicator(
+                        isPresent: $showToast,
+                        title: "Notification",
+                        message: "복사되었습니다",
+                        duration: 2,
+                        preset: .done,
+                        haptic: .success
+                    )
+                } // scrollview
 
         } // geo
         .padding()
-
     }
         
     

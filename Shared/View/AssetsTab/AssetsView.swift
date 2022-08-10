@@ -17,7 +17,6 @@ struct AssetsView: View {
     var body: some View {
         ZStack {
             VStack {
-                    //.shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 List {
                     if cards.cardinfos.count != 0 {
                         PayCardView()
@@ -29,19 +28,19 @@ struct AssetsView: View {
                 .navigationBarHidden(true)// navigationLink
                 .navigationBarTitle("", displayMode: .inline)
             } // Vstack
-        VStack {
-            Spacer()
-            HStack{
+            VStack {
                 Spacer()
-                NavigationLink(destination: AddItemView()) {
-                    Image(systemName: "plus")
-                        .font(.subheadline)
-                        .frame(width:30, height: 30)
-                        .background(Color.green)
-                        .clipShape(Circle())
-                        .foregroundColor(.white)
-                    }
-                }.padding()
+                HStack{
+                    Spacer()
+                    NavigationLink(destination: AddItemView()) {
+                        Image(systemName: "plus")
+                            .font(.subheadline)
+                            .frame(width:30, height: 30)
+                            .background(Color.green)
+                            .clipShape(Circle())
+                            .foregroundColor(.white)
+                        }
+                    }.padding()
             } // Vstack
             VStack {
                 Spacer()
@@ -52,11 +51,10 @@ struct AssetsView: View {
             }
 
         } // Zstack
-
-        //
-        //.edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)// navigationLink
     } // body View
-    
+
 } // struct view
 
 struct AssetsView_Previews: PreviewProvider {

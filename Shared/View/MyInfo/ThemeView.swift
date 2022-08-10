@@ -16,26 +16,39 @@ struct ThemeView: View {
     
     var body: some View {
         VStack{
-            Form {
-                Section(header: Text("앱 설정")
-                    .font(.headline.bold())
-                    .foregroundColor(Color.accentColor)
-                    ) {
-                    Picker(selection: $csManager.colorScheme, label: Text("화면 테마 설정")) {
-                        Text(ColorValues[0]).tag(ColorScheme.unspecified)
-                        Text(ColorValues[1]).tag(ColorScheme.dark)
-                        Text(ColorValues[2]).tag(ColorScheme.light)
-                    }
-                }.padding()
+            List {
 
+//            Form {
+//                Section(header: Text("앱 설정")
+//                    .font(.headline.bold())
+//                    .foregroundColor(Color.accentColor)
+//                    ) {
+//                    Picker(selection: $csManager.colorScheme, label: Text("화면 테마 설정")) {
+//                        Text(ColorValues[0]).tag(ColorScheme.unspecified)
+//                        Text(ColorValues[1]).tag(ColorScheme.dark)
+//                        Text(ColorValues[2]).tag(ColorScheme.light)
+//                    }
+//                }.padding()
             }
         }
     }
 }
-
+    //                ForEach(ColorValues, id:\.self) { t in
+    //                    Button(action: {
+    //
+    //                    }, label: {
+    //                        HStack {
+    //                            Text(t)
+    //                                .font(.subheadline)
+    //
+    //                        }
+    //                    })
+    //                }
+    //            }
+    
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
         ThemeView()
-            //.environmentObject(ColorSchemeManager)
+            .environmentObject(ColorSchemeManager())
     }
 }

@@ -13,22 +13,17 @@ import UIKit
 struct DutchView: View {
     @ObservedObject var sun =  DutchInfo()
     @FocusState private var focusedField: Field?
-    @State var payResult: String = ""
     @State private var showToast = false
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
-//    @Binding var text: String
+    @State var payResult: String = ""
     @State var outString: String = ""
     @State var shareText: ShareText?
-
     @State var showShare: Bool = false
-    
     @State var txtText: String = ""
     
+    var commonOption: commonOption
     
-//    init(text: Binding<String>) {
-//        self._text = text
-//    }
     enum Field: Hashable {
         case priceField, memberField, txtField
     }
@@ -178,7 +173,6 @@ struct DutchView: View {
                                     .font(.subheadline)
                             })
 
-                            
                         }
                     }
                     .sheet(isPresented: $showShare) {
@@ -227,7 +221,7 @@ struct ShareText: Identifiable {
 
 struct DutchView_Previews: PreviewProvider {
     static var previews: some View {
-        DutchView()
+        DutchView(commonOption: commonOption())
             .environmentObject(CardData())
 
     }

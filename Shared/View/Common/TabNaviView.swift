@@ -35,19 +35,19 @@ struct TabNaviView: View {
                                 Text("자산")
                                     .font(.subheadline.bold())
                             }
-                        DutchPayView(text: $searchText )
+                        DutchPayView(commonOption: commonOption())
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
                                 Text("더치페이(단건)")
                                     .font(.subheadline.bold())
                             }
-                        DutchView()
+                        DutchView(commonOption: commonOption())
                             .tabItem {
                                 Image(systemName: "circle.grid.cross")
                                 Text("더치페이(여러개)")
                                     .font(.subheadline.bold())
                             }
-                        MyInfoView()
+                        MyInfoView(commOption: commonOption())
                             .tabItem {
                                 Image(systemName: "info.circle")
                                 Text(myInfo)
@@ -66,10 +66,7 @@ struct TabNaviView: View {
             .ignoresSafeArea(.all, edges: .top)
         } // navi
         .navigationViewStyle(StackNavigationViewStyle())
-        //.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-
     } // Body View
-    
     var NaviColor: Color {
         return colorScheme == .dark ? .black : .white
     }
