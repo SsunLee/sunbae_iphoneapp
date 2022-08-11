@@ -95,8 +95,8 @@ struct DutchPayView: View {
                                 })
                             }
                         }
-                        .sheet(item: $shareText) { shareText in
-                            ActivityView(text: shareText.text)
+                        .sheet(isPresented: $showShare) {
+                            ActivityView(text: outString)
                         }
                         VStack {
                             Divider()

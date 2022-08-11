@@ -37,7 +37,6 @@
 		CAE4D5762881BE4200118284 /* newDuctModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4D5752881BE4200118284 /* newDuctModel.swift */; };
 		CAEC96CF28577C75002CBDF5 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96CE28577C75002CBDF5 /* AssetsView.swift */; };
 		CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D1285796FB002CBDF5 /* AddItemView.swift */; };
-		CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */; };
 		CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D728674AF8002CBDF5 /* ColorSchemeManager.swift */; };
 		CAEC96D928674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96D728674AF8002CBDF5 /* ColorSchemeManager.swift */; };
 		CAEC96DB286780CE002CBDF5 /* ThemeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC96DA286780CE002CBDF5 /* ThemeSetting.swift */; };
@@ -102,7 +101,6 @@
 		CAE4D5752881BE4200118284 /* newDuctModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDuctModel.swift; sourceTree = "<group>"; };
 		CAEC96CE28577C75002CBDF5 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		CAEC96D1285796FB002CBDF5 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
-		CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		CAEC96D728674AF8002CBDF5 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		CAEC96DA286780CE002CBDF5 /* ThemeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSetting.swift; sourceTree = "<group>"; };
 		CAEC96E028678B65002CBDF5 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				0415E6532861758B004A8D05 /* MyInfoView.swift */,
-				CAEC96D42865B1DB002CBDF5 /* ThemeView.swift */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -513,7 +510,6 @@
 				CAEC96D2285796FB002CBDF5 /* AddItemView.swift in Sources */,
 				CAE4D5762881BE4200118284 /* newDuctModel.swift in Sources */,
 				0408CAE228A0D3DB000474E8 /* GADBannerView.swift in Sources */,
-				CAEC96D52865B1DB002CBDF5 /* ThemeView.swift in Sources */,
 				CAE4D5742881A56400118284 /* DutchView.swift in Sources */,
 				CAEC96D828674AF8002CBDF5 /* ColorSchemeManager.swift in Sources */,
 				0415E6572861780C004A8D05 /* SplashView.swift in Sources */,
@@ -689,7 +685,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "sunbae_app (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.5;
+				CURRENT_PROJECT_VERSION = 1.1.7;
 				DEVELOPMENT_TEAM = T65P9D58JD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -704,7 +700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "sun.sunbae-app";
 				PRODUCT_NAME = "SSUN&PAY";
@@ -722,7 +718,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "sunbae_app (iOS)Release.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.5;
+				CURRENT_PROJECT_VERSION = 1.1.7;
 				DEVELOPMENT_TEAM = T65P9D58JD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -737,7 +733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "sun.sunbae-app";
 				PRODUCT_NAME = "SSUN&PAY";
