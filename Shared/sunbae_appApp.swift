@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 @main
 struct sunbae_appApp: App {
     
     @StateObject var csManager = ColorSchemeManager()
+    
+    init() {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+    }
+    
     
     var body: some Scene {
         

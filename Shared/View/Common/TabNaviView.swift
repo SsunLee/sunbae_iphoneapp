@@ -57,10 +57,10 @@ struct TabNaviView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            GADBannerViewController().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                            BannerAd().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
                             Spacer()
                         }
-                        .padding(5)
+                        .padding(1)
                     }
                 } // Vstack
             } // Zstack

@@ -23,6 +23,8 @@ struct MyInfoView: View {
                     Text(ColorValues[1]).tag(ColorScheme.dark)
                     Text(ColorValues[2]).tag(ColorScheme.light)
                 }
+                BannerAd()
+                    .padding(1)
                 Button(action: {
                     if let url = URL(string: "itms-apps://apple.com/app/id1635593176") {
                         UIApplication.shared.open(url)
@@ -38,6 +40,7 @@ struct MyInfoView: View {
                             .padding(5)
                     }
                 })
+                
             } // list
         } // Vstack
     }
