@@ -14,16 +14,22 @@ struct DutchPayView: View {
     @ObservedObject var sun =  DutchInfo()
     @State var price: String = ""
     @State var member: String = ""
-    @State var outString: String = ""
+//    @State var outString: String = ""
     @State var shareText: ShareText?
+    
     @State var payResult: String = ""
-    @State var showShare: Bool = false
+
     @State private var txtText: String = ""
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
     @State private var showToast = false
     @FocusState private var focusedField: Field?
 
+    
+    // test
+    @State var items : [Any] = []
+    @State var showShare: Bool = false
+    
     enum Field: Hashable {
         case priceField, memberField, txtField
     }
@@ -74,6 +80,13 @@ struct DutchPayView: View {
                                 .foregroundColor(Color.accentColor)
                                 Spacer()
                                 Button(action: {
+                                    txtText = ""
+                                }, label: {
+                                    Text("Clear")
+                                        .font(.subheadline)
+                                        .padding()
+                                })
+                                Button(action: {
                                     if !txtText.isEmpty {
                                         UIPasteboard.general.string = txtText
                                         showToast.toggle()
@@ -86,17 +99,17 @@ struct DutchPayView: View {
                                         .padding()
                                 })
                                 Button(action: {
-                                    outString = txtText
-                                    shareText = ShareText(text: outString)
-                                    showShare = sun.isDisabled() ? false : true
+                                    if !txtText.isEmpty {
+                                        shareText = ShareText(text: txtText)
+                                    }
                                 }, label: {
                                     Text("공유하기")
                                         .font(.subheadline)
                                 })
                             }
                         }
-                        .sheet(isPresented: $showShare) {
-                            ActivityView(text: outString)
+                        .sheet(item: $shareText) { shareText in
+                            ShareSheet(items: shareText.text)
                         }
                         VStack {
                             Divider()
@@ -137,6 +150,17 @@ struct DutchPayView: View {
         let calData: String = dutchCls.calDutchPay()
         
         return calData
+    }
+}
+
+extension UINavigationController: UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
     }
 }
 

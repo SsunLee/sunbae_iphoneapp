@@ -17,10 +17,16 @@ struct DutchView: View {
     @State private var inputHeight: CGFloat = 200
     @State private var isFocused: Bool = false
     @State var payResult: String = ""
-    @State var outString: String = ""
+    
+//    @State var outString: String = ""
     @State var shareText: ShareText?
-    @State var showShare: Bool = false
+    
     @State var txtText: String = ""
+    
+    // test
+    //@State var items : [Any] = []
+    @State var showShare: Bool = false
+    
     
     var commonOption: commonOption
     
@@ -132,6 +138,8 @@ struct DutchView: View {
                     Button(action: {
                         focusedField = nil
                         txtText = sun.getDutchInfo()
+
+                        
                     }, label: {
                             Text("정산하기")
                                 .frame(width: geo.size.width, height: 50)
@@ -165,9 +173,9 @@ struct DutchView: View {
                                     .padding()
                             })
                             Button(action: {
-                                outString = sun.getDutchInfo()
-                                shareText = ShareText(text: outString)
-                                showShare = sun.isDisabled() ? false : true
+                                if !txtText.isEmpty {
+                                    shareText = ShareText(text: txtText)
+                                }
                             }, label: {
                                 Text("공유하기")
                                     .font(.subheadline)
@@ -175,8 +183,8 @@ struct DutchView: View {
 
                         }
                     }
-                    .sheet(isPresented: $showShare) {
-                        ActivityView(text: outString)
+                    .sheet(item: $shareText) { shareText in
+                        ShareSheet(items: shareText.text)
                     }
                     .SPIndicator(
                         isPresent: $showToast,
@@ -202,17 +210,32 @@ struct DutchView: View {
     } // body
 } // end
 
-// 1. Activity View
-struct ActivityView: UIViewControllerRepresentable {
-    let text: String
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
-        return UIActivityViewController(activityItems: [text], applicationActivities: nil)
+struct ShareSheet : UIViewControllerRepresentable {
+    let items: String
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ShareSheet>) -> UIActivityViewController {
+        //let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        return UIActivityViewController(activityItems: [items], applicationActivities: nil)
     }
-
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ShareSheet>) {
+    
+    }
 }
 
+
+//// 1. Activity View
+//struct ActivityView: UIViewControllerRepresentable {
+//    let text: String
+//
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
+//        return UIActivityViewController(activityItems: [text], applicationActivities: nil)
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
+//}
+//
 // 2. Share Text
 struct ShareText: Identifiable {
     let id = UUID()
